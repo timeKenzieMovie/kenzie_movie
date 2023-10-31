@@ -7,9 +7,13 @@
 .pageLogin {
     width: auto;
     height: 85%;
-    background-image: url("../../assets/login_background.jpg");
     display: flex;
     flex-direction: column;
+    background-image: url("../../assets/login_background.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 20px;
 }
 
 .main {
