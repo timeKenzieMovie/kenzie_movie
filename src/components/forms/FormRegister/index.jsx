@@ -1,11 +1,15 @@
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import {BsArrowLeft} from "react-icons/bs"
+import { BsArrowLeft } from "react-icons/bs"
 import { Input } from "../../Input";
+import { formRegisterSchema } from "./formRegisterSchema";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 export const FormRegister = () => {
 
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors } } = useForm({
+        resolver: zodResolver(formRegisterSchema),
+    });
 
     const submit = (formData) => {
         console.log(formData)
@@ -20,7 +24,7 @@ export const FormRegister = () => {
                         <p>Preencha os campos para cadastrar-se</p>
                     </div>
                     <div>
-                        <Link to="/"><BsArrowLeft/> Voltar</Link>
+                        <Link to="/"><BsArrowLeft /> Voltar</Link>
                     </div>
                 </div>
                 <form onSubmit={handleSubmit(submit)}>
