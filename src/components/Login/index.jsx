@@ -1,21 +1,12 @@
-import { Link } from "react-router-dom"
 import { FormLogin } from "../FormLogin"
 import styles from "./style.module.scss"
+import { Header } from "../Header"
 
 export const Login = () => {
     return (
         <section className={styles.login}>
             <div className={styles.pageLogin}>
-                <header className={styles.header}>
-                    <div className={styles.divHeader}>
-                        <p className={styles.logo}>kenziemovie</p>
-                        <div className={styles.divNav}>
-                            <Link className="menuItem" to={"/register"}><span >Cadastre-se</span></Link>
-
-                            <button className={styles.buttonLogin}>Entrar</button>
-                        </div>
-                    </div>
-                </header>
+                <Header />
                 <main className={styles.main}>
                     <FormLogin />
                 </main>

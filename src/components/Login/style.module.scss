@@ -12,43 +12,6 @@
     flex-direction: column;
 }
 
-.header {
-    width: 100%;
-    padding: 16px;
-}
-
-.divHeader {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 auto;
-    width: 75%;
-}
-
-.logo {
-    width: 135.61px;
-    color: var(--white);
-}
-
-.divNav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 25%;
-}
-
-.buttonLogin {
-    width: 114px;
-    height: 34px;
-    border-radius: 255px;
-    background: var(--yellow);
-    color: var(--grey-2);
-    font-weight: var(--weigth-1);
-    font-size: var(--font-6);
-}
-
 .hr {
     margin: 20px 0;
     width: 100%;
