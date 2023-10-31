@@ -4,6 +4,8 @@ import { BsArrowLeft } from "react-icons/bs"
 import { Input } from "../../Input";
 import { formRegisterSchema } from "./formRegisterSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
+import styles from "./style.module.scss"
+import { Footer } from "../../Footer";
 
 export const FormRegister = () => {
 
@@ -25,11 +27,12 @@ export const FormRegister = () => {
                             <button className={styles.buttonLogin}>Login</button>
                         </Link>
                     </div>
-                    <div>
-                        <Link to="/"><BsArrowLeft /> Voltar</Link>
-                    </div>
                 </header>
-                <main>
+                <main className={styles.mainRegister}>
+                    <div className={styles.divForm}>
+                        <h2 className="title1">Cadastro</h2>
+                        <Link  className="menuItem link" to="/"><BsArrowLeft /> Voltar</Link>
+                    </div>
                     <p className="paragraph">Preencha os campos para cadastrar-se</p>
                     <form className={styles.formRegister} onSubmit={handleSubmit(submit)}>
                         <div className={styles.divInputs}>

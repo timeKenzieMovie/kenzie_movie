@@ -39,6 +39,7 @@
     flex-direction: column;
     gap: 16px;
     margin: 120px auto;
+    // border: 2px solid red;
     padding: 16px;
 }
 
@@ -55,6 +56,13 @@
     display: flex;
     gap: 32px;
     flex-direction: column;
+}
+
+.divForm{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .divInputs {
