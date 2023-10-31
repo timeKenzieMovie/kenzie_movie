@@ -6,21 +6,15 @@
 .title1 {
     @extend %title;
     font-size: var(--font-1);
-<<<<<<< HEAD
     line-height: var(--height-1);
-=======
-    line-height:var(--height-1);
->>>>>>> 52ac97468e400a90ba7d85b90f57a5ebcaf77101
+    line-height: var(--height-1);
 }
 
 .title1-mobileA {
     @extend %title;
     font-size: var(--font-2);
-<<<<<<< HEAD
     line-height: var(--height-2);
-=======
-    line-height:var(--height-2);
->>>>>>> 52ac97468e400a90ba7d85b90f57a5ebcaf77101
+    line-height: var(--height-2);
 }
 
 .title1-mobileB {
@@ -32,47 +26,38 @@
 .title3 {
     @extend %title;
     font-size: var(--font-4);
-<<<<<<< HEAD
     line-height: var(--height-4);
-=======
-    line-height:var(--height-4);
->>>>>>> 52ac97468e400a90ba7d85b90f57a5ebcaf77101
+    line-height: var(--height-4);
 }
 
 
 %text {
-<<<<<<< HEAD
     font-family: var(--font-secondary);
-=======
     font-family: var(--font-inter);
->>>>>>> 52ac97468e400a90ba7d85b90f57a5ebcaf77101
     font-weight: var(--weight-2);
     color: var(--white);
 }
 
-<<<<<<< HEAD
 .paragraph {
-=======
-.text1 {
->>>>>>> 52ac97468e400a90ba7d85b90f57a5ebcaf77101
-    @extend %text;
-    font-size: var(--font-5);
-    line-height: var(--height-5);
-}
-
-<<<<<<< HEAD
-.menuItem {
-    @extend %text;
-    font-size: 1var(--font-6);
-    line-height: var(--height-5);
-
-    &.link {
-        color: var(--yellow);
+    .text1 {
+        @extend %text;
+        font-size: var(--font-5);
+        line-height: var(--height-5);
     }
-=======
-.text2 {
-    @extend %text;
-    font-size: 1var(--font-6);
-    line-height: var(--height-5);
->>>>>>> 52ac97468e400a90ba7d85b90f57a5ebcaf77101
+
+    .menuItem {
+        @extend %text;
+        font-size: 1var(--font-6);
+        line-height: var(--height-5);
+
+        &.link {
+            color: var(--yellow);
+        }
+
+        .text2 {
+            @extend %text;
+            font-size: 1var(--font-6);
+            line-height: var(--height-5);
+        }
+    }
 }

@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom"
-import { NotFoundPage } from "../pages/NotFoundPage"
+import { NotFoundPage } from "../pages/NotFound"
 import { LoginPage } from "../pages/Login"
 import { RegisterPage } from "../pages/Register"
 import { LandingPage } from "../pages/LandingPage"
