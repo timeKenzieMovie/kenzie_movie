@@ -1,0 +1,34 @@
+.formLogin {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 16px;
+    height: auto;
+}
+
+.form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+    gap: 16px;
+}
+
+.divRegisterLogin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.buttonLogin {
+    width: 100%;
+    padding: 10px;
+    font-family: var(--font-primary);
+    font-size: var(--font-6);
+    font-weight: var(--weight-1);
+    line-height: var(--font-4);
+    background-color: var(--yellow);
+    color: var(--grey-2);
+    border-radius: 255px;
+}
