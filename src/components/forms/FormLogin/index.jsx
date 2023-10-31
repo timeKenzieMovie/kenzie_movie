@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import { Input } from "../Input"
+import { Input } from "../../Input"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { formLoginSchema } from "./formLoginSchema"

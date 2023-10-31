@@ -1,8 +1,9 @@
-import { Input } from "../../components/Input";
+import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import {BsArrowLeft} from "react-icons/bs"
+import { Input } from "../../Input";
 
-export const RegisterPage = () => {
+export const FormRegister = () => {
 
     const { register, handleSubmit, formState: { errors } } = useForm();
 
@@ -12,7 +13,6 @@ export const RegisterPage = () => {
 
     return (
         <>
-            <Header />
             <main>
                 <div>
                     <div>
@@ -53,7 +53,6 @@ export const RegisterPage = () => {
                     <button type="submit">Cadastrar-se</button>
                 </form>
             </main>
-            <Footer/>
         </>
     )
 }
