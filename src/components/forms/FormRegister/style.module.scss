@@ -1,0 +1,80 @@
+.register {
+    width: auto;
+    height: 100vh;
+    background: var(--grey-2);
+}
+
+.header {
+    width: 100%;
+    padding: 16px;
+}
+
+.divHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    width: 75%;
+}
+
+.logo {
+    width: 136px;
+    color: var(--white);
+}
+
+.buttonLogin {
+    width: 114px;
+    height: 34px;
+    border-radius: 255px;
+    background: var(--yellow);
+    color: var(--grey-2);
+    font-weight: var(--weigth-1);
+    font-size: var(--font-6);
+}
+
+.mainRegister {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 120px auto;
+    padding: 16px;
+}
+
+.divRegister {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.formRegister {
+    width: 100%;
+    display: flex;
+    gap: 32px;
+    flex-direction: column;
+}
+
+.divInputs {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.registerButton {
+    width: 194px;
+    height: 42px;
+    border-radius: 255px;
+    background: var(--yellow);
+    font-family: var(--font-primary);
+    font-size: var(--font-6);
+    font-weight: var(--weight-1);
+    line-height: var(--font-4);
+    align-self: flex-end;
+    color: var(--grey-2);
+}
