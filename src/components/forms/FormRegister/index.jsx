@@ -2,12 +2,14 @@ import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { BsArrowLeft } from "react-icons/bs"
 import { Input } from "../../Input";
-import styles from "./style.module.scss"
-import { Footer } from "../../Footer";
+import { formRegisterSchema } from "./formRegisterSchema";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 export const FormRegister = () => {
 
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors } } = useForm({
+        resolver: zodResolver(formRegisterSchema),
+    });
 
     const submit = (formData) => {
         console.log(formData)
@@ -23,14 +25,11 @@ export const FormRegister = () => {
                             <button className={styles.buttonLogin}>Login</button>
                         </Link>
                     </div>
-                </header>
-                <main className={styles.mainRegister}>
-                    <div className={styles.divRegister}>
-                        <h2 className="title1">Cadastro</h2>
-                        <p>
-                            <Link className="menuItem link" to="/"><BsArrowLeft /> Voltar</Link>
-                        </p>
+                    <div>
+                        <Link to="/"><BsArrowLeft /> Voltar</Link>
                     </div>
+                </header>
+                <main>
                     <p className="paragraph">Preencha os campos para cadastrar-se</p>
                     <form className={styles.formRegister} onSubmit={handleSubmit(submit)}>
                         <div className={styles.divInputs}>
@@ -61,8 +60,8 @@ export const FormRegister = () => {
                                 errors={errors.confirm_password}
                             />
                         </div>
+                        <button className={styles.registerButton} type="submit">Cadastrar-se</button>
                     </form>
-                    <button className={styles.registerButton} type="submit">Cadastrar-se</button>
                 </main>
                 <Footer />
             </section >
