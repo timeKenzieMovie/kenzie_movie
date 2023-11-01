@@ -24,6 +24,12 @@
     }
 }
 
+.title2 {
+    @extend %title;
+    font-size: 1var(--font-6);
+    line-height: var(--height-5);
+}
+
 .title3 {
     @extend %title;
     font-size: var(--font-4);
