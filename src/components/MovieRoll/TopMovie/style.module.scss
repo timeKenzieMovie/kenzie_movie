@@ -1,0 +1,58 @@
+.topmovie {
+  width: 80%;
+  margin: 0 auto 3rem auto;
+}
+
+.movieimage {
+  border-radius: 42px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.movieinfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.movietype {
+  padding: 0.5rem 1rem;
+  border-radius: 255px;
+  background-color: var(--yellow);
+  color: var(--grey-2);
+  font-size: var(--font-6);
+  font-weight: var(--weigth-1);
+}
+
+.movieduration {
+  font-family: var(--font-secondary);
+  color: var(--white);
+  font-size: var(--font-5);
+  font-weight: var(--weigth-2);
+}
+
+.movietitle {
+  font-family: var(--font-primary);
+  color: var(--white);
+  font-size: var(--font-1);
+  font-weight: var(--weigth-1);
+}
+
+.movierating {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+
+  img {
+    height: 34px;
+  }
+
+  span {
+    font-family: var(--font-primary);
+    color: var(--white);
+    font-size: var(--font-3);
+    font-weight: var(--weigth-1);
+  }
+}
