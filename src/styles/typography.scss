@@ -19,6 +19,9 @@
     @extend %title;
     font-size: var(--font-3);
     line-height: var(--height-3);
+    &.center{
+        text-align: center;
+    }
 }
 
 .title2 {
@@ -50,6 +53,7 @@
     @extend %text;
     font-size: 1var(--font-6);
     line-height: var(--height-5);
+    text-decoration: none;
 
     &.link {
         color: var(--yellow);

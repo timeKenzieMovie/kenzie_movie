@@ -1,11 +1,18 @@
 .input {
-    width: 536px;
+    width: 100%;
+    min-width: 430px;
     background: var(--grey-1);
-}
-
-.placeholder {
+    padding: 8px;
+    color: var(--white);
     font-family: var(--font-primary);
-    font-size: 16px;
     font-weight: var(--weight-1);
     line-height: 24px;
+    &::placeholder{
+        font-size: 16px;
+        color: var(--white);
+    }
+    &:focus{
+        color: var(--white);
+    }
 }
+
