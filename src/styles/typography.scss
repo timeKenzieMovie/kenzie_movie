@@ -47,6 +47,12 @@
     @extend %text;
     font-size: var(--font-5);
     line-height: var(--height-5);
+    &.alignRight{
+        text-align: right
+    }
+    &.alignLeft{
+        width: 77.5%
+    }
 }
 
 .menuItem {

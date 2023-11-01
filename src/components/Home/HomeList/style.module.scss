@@ -1,11 +1,15 @@
 .avaliationList {
+    width: 100%;
+    // border: 1px solid red;
     padding: 30px;
+    gap: 10px;
     display: flex;
     justify-items: center;
     justify-content: center;
     flex-wrap: wrap;
 
     &>li {
+        // border: 1px solid red;
         width: 413px;
         height: 469px;
         display: flex;
