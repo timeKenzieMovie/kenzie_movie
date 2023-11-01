@@ -1,6 +1,5 @@
 .input {
     width: 100%;
-    min-width: 430px;
     background: var(--grey-1);
     padding: 8px;
     color: var(--white);
@@ -13,6 +12,9 @@
     }
     &:focus{
         color: var(--white);
+    }
+    &.register{
+        max-width: 48%;
     }
 }
 
