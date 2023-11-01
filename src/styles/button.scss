@@ -1,5 +1,5 @@
 .buttonSmall {
-    width: 43px;
+    width: 114px;
     height: 43px;
     // top: 881px;
     // left: 43px;
@@ -11,6 +11,10 @@
     line-height: var(--font-4);
     background-color: var(--yellow);
     color: var(--grey-2);
+
+    &.round{
+        width: 43px;
+    }
 }
 
 .buttonMedium {
