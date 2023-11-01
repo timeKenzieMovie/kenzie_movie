@@ -12,19 +12,29 @@
     background-color: var(--yellow);
     color: var(--grey-2);
 
-    &.round{
+    &.round {
         width: 43px;
     }
 }
 
-// .buttonMedium {
-//     @extend %btn;
-//     width: 170px;
-//     height: 54px;    
-// }
+%btn {
+    font-family: var(--font-primary);
+    font-size: var(--font-6);
+    font-weight: var(--weight-1);
+    line-height: var(--font-4);
+    background-color: var(--yellow);
+    color: var(--grey-2);
+    border-radius: 255px;
+}
 
-// .buttonLarge {
-//     @extend %btn;
-//     width: 185px;
-//     height: 67px;    
-// }
+.buttonMedium {
+    @extend %btn;
+    width: 170px;
+    height: 54px;
+}
+
+.buttonLarge {
+    @extend %btn;
+    width: 185px;
+    height: 67px;
+}
