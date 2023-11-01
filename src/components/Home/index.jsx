@@ -3,10 +3,15 @@ import kenzieMovieIcon from "../../assets/kenziemovie.svg";
 import Style from "./style.module.scss";
 import { HomeList } from "./HomeList";
 import { FiStar } from "react-icons/fi";
+import { HomeCard } from "./HomeCard";
 
 export const Home = () => {
     const [user, setUser] = useState(null);
+
+    const [avaliationList, setAvaliationList] = useState([]);
+
     const [isVisibleCreate, setIsVisibleCreate] = useState(false);
+
     const [isVisibleEdit, setIsVisibleEdit] = useState(false);
 
 
@@ -42,8 +47,9 @@ export const Home = () => {
                 <section className={`${Style.listAvaliation}`}>
                     <div>
                         <h2 className={`title1`}>Avaliações</h2>
-                        <button className={`buttonMedium`}> <FiStar color="var(--grey-2)" />Avaliar</button>
+                        <button onClick={()=> setIsVisibleCreate(true)} className={`buttonMedium`}> <FiStar color="var(--grey-2)" />Avaliar</button>
                     </div>
+                    <HomeCard avaliationList={avaliationList} setIsVisibleCreate={setIsVisibleCreate} isVisibleCreate={isVisibleCreate} isVisibleEdit={isVisibleEdit} setIsVisibleEdit={setIsVisibleEdit}/>
                     <HomeList />
                 </section>
             </main>

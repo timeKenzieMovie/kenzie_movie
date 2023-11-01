@@ -1,8 +1,9 @@
 .avaliationList {
-    display: grid;
     padding: 30px;
-    grid-template-columns: 1fr 1fr 1fr;
+    display: flex;
     justify-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
 
     &>li {
         width: 413px;
@@ -18,7 +19,7 @@
             justify-content: center;
         }
 
-        &>.text{
+        &>.text {
             width: 302px;
             height: 216px;
         }
