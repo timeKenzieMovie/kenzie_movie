@@ -48,10 +48,11 @@
     font-size: var(--font-5);
     line-height: var(--height-5);
     &.alignRight{
-        text-align: right
+        text-align: right;
+        color: #FFFFFF80;
     }
     &.alignLeft{
-        width: 77.5%
+        width: 77.5%;
     }
 }
 
@@ -60,6 +61,7 @@
     font-size: 1var(--font-6);
     line-height: var(--height-5);
     text-decoration: none;
+    white-space: nowrap;
 
     &.link {
         color: var(--yellow);

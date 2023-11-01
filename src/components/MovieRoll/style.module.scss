@@ -1,9 +1,10 @@
 .movielist {
-  width: 80%;
+  width:75%;
   margin: 0 auto;
+  // border: 1px solid red;
   
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 1rem;
 }

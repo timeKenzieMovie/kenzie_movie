@@ -1,7 +1,15 @@
-.register {
+body{
     width: auto;
-    height: 100vh;
+    height: auto;
     background: var(--grey-2);
+
+}
+
+.register {
+    width: 100%;
+    height: 100%;
+    background: var(--grey-2);
+    // border: 10px solid red;
 }
 
 .header {
@@ -35,21 +43,17 @@
 }
 
 .mainRegister {
-    width: 60%;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    margin: 120px auto;
-    // border: 2px solid red;
-    padding: 16px;
-}
-
-.divRegister {
     width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    &>section{
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 16px;
+        margin: 120px auto;
+        // border: 2px solid red;
+        // padding: 16px;
+    }
 }
 
 .formRegister {
@@ -57,9 +61,12 @@
     display: flex;
     gap: 32px;
     flex-direction: column;
+    // border: 2px solid red;
+
 }
 
 .divForm{
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -69,6 +76,7 @@
 .divInputs {
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;

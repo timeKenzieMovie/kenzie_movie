@@ -4,6 +4,7 @@ import { FormLogin } from "../../components/forms/FormLogin";
 import styles from "./style.module.scss"
 
 export const LoginPage = () => {
+    
     return (
         <section className={styles.login}>
             <div className={styles.pageLogin}>
