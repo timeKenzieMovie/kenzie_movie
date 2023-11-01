@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Logo from "../../../assets/kenziemovie.svg"
 import { useForm } from "react-hook-form";
 import { BsArrowLeft } from "react-icons/bs"
 import { Input } from "../../Input";
@@ -22,8 +23,8 @@ export const FormRegister = () => {
             <section className={styles.register}>
                 <header className={styles.header}>
                     <div className={styles.divHeader}>
-                        <p className={styles.logo}>kenziemovie</p>
-                        <Link to="/">
+                        <img src={Logo} alt="Kenzie Movie icon" />
+                        <Link to="/login">
                             <button className={styles.buttonLogin}>Login</button>
                         </Link>
                     </div>

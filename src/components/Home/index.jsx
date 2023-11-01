@@ -20,7 +20,7 @@ export const Home = () => {
 
 
     const handleClick = () => {
-        navigate('/landing')
+        navigate('/')
     }
 
     return (
