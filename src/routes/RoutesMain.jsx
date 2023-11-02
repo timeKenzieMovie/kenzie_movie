@@ -5,22 +5,14 @@ import { LandingPage } from "../pages/LandingPage";
 import { HomePage } from "../pages/Home";
 import { LoginPage } from "../pages/LoginPage";
 import { RegisterPage } from "../pages/RegisterPage";
-import { useEffect, useState } from "react";
-import { api } from "../services/api";
+import { useContext, useEffect } from "react";
+import { MovieContext } from "../providers/MovieContext";
 
 
 export const RoutesMain = () => {
-    const [ moviesList, setMoviesList ] = useState([]);
+    const { moviesList, getMovies } = useContext(MovieContext);
 
     useEffect(() => {
-        const getMovies = async () => {
-            try {
-                const { data } = await api.get("movies?_embed=reviews");
-                setMoviesList(data);
-            } catch (error) {
-                console.error(error.message);
-            }
-        }
         getMovies();
     }, []);
 
