@@ -5,7 +5,7 @@ import { MovieRoll } from "../../components/MovieRoll";
 
 
 // Home
-export const LandingPage = () => {
+export const LandingPage = ({moviesList}) => {
 
 
     return (
