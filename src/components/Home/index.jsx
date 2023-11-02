@@ -43,10 +43,10 @@ export const Home = () => {
                     <div className={`${Style.infoHeader}`}>
                         <div className={`${Style.text}`}>
                             <p className={`buttonSmall`}>Ficção</p>
-                            <h2 className={`title1`}>The Random Heros</h2>
-                        </div>
-                        <div>
                             <p className={`paragraph alignRight`}>90m</p>
+                        </div>
+                        <div className={`${Style.text}`}>
+                            <h2 className={`title1 nowrap`}>The Random Heros</h2>
 
                             <p className={`title1-mobileB`}><FiStar color="var(--yellow)" /> 5.0</p>
 
