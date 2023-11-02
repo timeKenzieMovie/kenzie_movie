@@ -26,19 +26,7 @@ export const MovieRoll = ({ moviesList, setMoviesList }) => {
   // }, []);
 
   const handleClick = () => {
-    // useEffect(() => {
-    //   const getMoviesById = async () => {
-    //     try {
-    //       const { data } = await api.get(`/movies/${moviesList.id}?_embed=reviews`);
-    //       console.log(data);
-    //       setMoviesList(data);
-    //       navigate("/home")
-    //     } catch (error) {
-    //       console.error(error);
-    //     }
-    //   }
-    //   getMoviesById();
-    // }, []);
+    // getMovie(moviesList.id)
     navigate("/home")
   }
   console.log(handleClick);

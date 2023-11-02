@@ -1,14 +1,8 @@
 import styles from "./style.module.scss";
 import star from "../../../assets/star.png";
-import { useNavigate } from "react-router-dom";
+
 
 export const TopMovie = ({ movie, handleClick }) => {
-  // const navigate = useNavigate();
-
-  // const handleClick = () => {
-    
-  //   navigate("/home")
-  // }
 
   const rating = movie.reviews.length > 0 ?
     movie.reviews.reduce((total, value) => total + value.score, 0) / movie.reviews.length :
