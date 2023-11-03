@@ -1,0 +1,42 @@
+.formLogin {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    height: auto;
+    // border: 1px solid red;
+}
+
+.form {
+    width: 100%;
+    height: auto;
+    // border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    margin: 10px auto;
+    gap: 16px;
+    &>input{
+        width: 100%;
+        // border: 1px solid red;
+    }
+}
+
+.divRegisterLogin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    // border: 1px solid red;
+}
+
+.buttonLogin {
+    width: 100%;
+    padding: 10px;
+    font-family: var(--font-primary);
+    font-size: var(--font-6);
+    font-weight: var(--weight-1);
+    line-height: var(--font-4);
+    background-color: var(--yellow);
+    color: var(--grey-2);
+    border-radius: 255px;
+}

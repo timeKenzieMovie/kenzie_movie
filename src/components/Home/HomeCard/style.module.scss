@@ -1,0 +1,56 @@
+.myAvaliation {
+    width: 100%;
+
+    // border: 1px solid red;
+    &>ul {
+        width: 100%;
+        // border: 1px solid red;
+
+        &>li {
+            width: 100%;
+            // border: 1px solid red;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+
+            &>p {
+                font-family: var(--font-primary);
+                font-size: 16px;
+                font-weight: 700;
+                line-height: 24px;
+            }
+
+            &>div {
+                // border: 1px solid red;
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+
+
+    }
+}
+
+.divAvaliation {
+    // border: 1px solid red;
+    width: 60%;
+    margin-left: 65px;
+}
+
+.noteEditRemove {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+
+    &>div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        // border: 1px solid red;
+        gap: 5px;
+    }
+}
