@@ -18,15 +18,9 @@ export const RoutesMain = () => {
 
     return (
         <Routes>
-<<<<<<< HEAD
-            <Route path="/" element={<LandingPage />} />
-            <Route path="/register" element={<RegisterPage />} />
-            <Route path="/login" element={<LoginPage />} />
-=======
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/" element={<LandingPage moviesList={moviesList}/>} />
->>>>>>> 357e96eab280bb58febcfa11830a93c9fc63cc63
             <Route path="/home" element={<HomePage />} />
             <Route path="/*" element={<NotFoundPage />} />
         </Routes>
