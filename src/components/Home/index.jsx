@@ -78,7 +78,38 @@ export const Home = ({ moviesList, moviesById }) => {
                         </section>
                     </main>
                 </div>
+<<<<<<< HEAD
             )}
+=======
+            </header>
+            <main>
+                <section className={`${Style.principalAvaliation}`}>
+                    <div className={`${Style.infoHeader}`}>
+                        <div className={`${Style.text}`}>
+                            <p className={`buttonSmall`}>Ficção</p>
+                            <p className={`paragraph alignRight`}>90m</p>
+                        </div>
+                        <div className={`${Style.text}`}>
+                            <h2 className={`title1 nowrap`}>The Random Heros</h2>
+
+                            <p className={`title1-mobileB`}><FiStar color="var(--yellow)" /> 5.0</p>
+
+                        </div>
+                    </div>
+                    <div className={`${Style.infoAvaliation}`}>
+                        <p className={`paragraph alignLeft`}>"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."</p>
+                    </div>
+                </section>
+                <section className={`${Style.listAvaliation}`}>
+                    <div>
+                        <h2 className={`title1`}>Avaliações</h2>
+                        <button onClick={() => setIsVisibleCreate(true)} className={`buttonMedium`}> <FiStar color="var(--grey-2)" />Avaliar</button>
+                    </div>
+                    <HomeCard avaliationList={avaliationList} setIsVisibleCreate={setIsVisibleCreate} isVisibleCreate={isVisibleCreate} isVisibleEdit={isVisibleEdit} setIsVisibleEdit={setIsVisibleEdit} />
+                    <HomeList />
+                </section>
+            </main>
+>>>>>>> develop
             <Footer />
 
         </section>

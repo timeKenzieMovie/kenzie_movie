@@ -1,13 +1,13 @@
 .input {
     width: 100%;
     background: var(--grey-1);
-    padding: 8px;
+    padding: .5rem;
     color: var(--white);
     font-family: var(--font-primary);
     font-weight: var(--weight-1);
-    line-height: 24px;
+    line-height: 1.5rem;
     &::placeholder{
-        font-size: 16px;
+        font-size: 1rem;
         color: var(--white);
     }
     &:focus{
@@ -18,3 +18,24 @@
     }
 }
 
+@media (max-width: 41.875rem){
+    .input {
+        width: 100%;
+        background: var(--grey-1);
+        padding: .5rem;
+        color: var(--white);
+        font-family: var(--font-primary);
+        font-weight: var(--weight-1);
+        line-height: 1.5rem;
+        &::placeholder{
+            font-size: 1rem;
+            color: var(--white);
+        }
+        &:focus{
+            color: var(--white);
+        }
+        &.register{
+            max-width: 100%;
+        }
+    } 
+}
