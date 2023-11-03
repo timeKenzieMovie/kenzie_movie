@@ -1,12 +1,10 @@
 import { Route, Routes } from "react-router-dom"
 import { NotFoundPage } from "../pages/NotFound"
 
-import { LandingPage } from "../pages/LandingPage";
-import { HomePage } from "../pages/Home";
-import { LoginPage } from "../pages/LoginPage";
-import { RegisterPage } from "../pages/RegisterPage";
-import { useContext, useEffect } from "react";
-import { MovieContext } from "../providers/MovieContext";
+import { LandingPage } from "../pages/LandingPage"
+import { HomePage } from "../pages/Home"
+import { LoginPage } from "../pages/LoginPage"
+import { RegisterPage } from "../pages/RegisterPage"
 
 
 export const RoutesMain = () => {

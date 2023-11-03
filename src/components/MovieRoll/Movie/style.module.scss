@@ -4,7 +4,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  gap: .5rem;
+  gap: 1rem;
+
 }
 
 .movieimage {
@@ -19,6 +20,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  // border: 1px solid red;
 }
 
 .movietype {
@@ -28,6 +30,7 @@
   color: var(--grey-2);
   font-size: var(--font-6);
   font-weight: var(--weight-1);
+  // border: 1px solid red;
 }
 
 .movieduration {

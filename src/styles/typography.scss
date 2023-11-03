@@ -6,15 +6,17 @@
 .title1 {
     @extend %title;
     font-size: var(--font-1);
+
     line-height: var(--height-1);
-    &.nowrap{
-        white-space: nowrap
-    }
+    line-height: var(--height-1);
+
 }
 
 .title1-mobileA {
     @extend %title;
     font-size: var(--font-2);
+    line-height: var(--height-2);
+
     line-height: var(--height-2);
 }
 
@@ -37,37 +39,44 @@
     @extend %title;
     font-size: var(--font-4);
     line-height: var(--height-4);
+
+    line-height: var(--height-4);
+
 }
 
 
 %text {
     font-family: var(--font-secondary);
+
+    font-family: var(--font-inter);
+
     font-weight: var(--weight-2);
     color: var(--white);
 }
 
 .paragraph {
-    @extend %text;
-    font-size: var(--font-5);
-    line-height: var(--height-5);
-    &.alignRight{
-        text-align: right;
-        color: #FFFFFF80;
-    }
-    &.alignLeft{
-        width: 77.5%;
-    }
-}
 
-.menuItem {
-    @extend %text;
-    font-size: 1var(--font-6);
-    line-height: var(--height-5);
-    text-decoration: none;
-    white-space: nowrap;
+    .text1 {
+        @extend %text;
+        font-size: var(--font-5);
+        line-height: var(--height-5);
+    }
 
-    &.link {
-        color: var(--yellow);
+    .menuItem {
+        @extend %text;
+        font-size: 1var(--font-6);
+        line-height: var(--height-5);
+
+        &.link {
+            color: var(--yellow);
+        }
+
+
+        .text2 {
+            @extend %text;
+            font-size: 1var(--font-6);
+            line-height: var(--height-5);
+        }
     }
 }
 
