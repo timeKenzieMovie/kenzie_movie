@@ -8,10 +8,10 @@
     font-size: var(--font-1);
 
     line-height: var(--height-1);
+
     line-height: var(--height-1);
-    &.nowrap{
-        white-space: nowrap
-    }
+    line-height: var(--height-1);
+
 }
 
 .title1-mobileA {
@@ -62,6 +62,7 @@
         @extend %text;
         font-size: var(--font-5);
         line-height: var(--height-5);
+
     }
 
     .menuItem {
@@ -98,19 +99,23 @@
         &.alignLeft{
             width: 90%;
         }
-    }
-}
 
-.menuItem {
-    @extend %text;
-    font-size: 1var(--font-6);
-    line-height: var(--height-5);
-    text-decoration: none;
-    white-space: nowrap;
+    }
+
+    .menuItem {
+        @extend %text;
+        font-size: 1var(--font-6);
+        line-height: var(--height-5);
 
         &.link {
             color: var(--yellow);
         }
+
+
+        &.link {
+            color: var(--yellow);
+        }
+
 
 
         .text2 {
