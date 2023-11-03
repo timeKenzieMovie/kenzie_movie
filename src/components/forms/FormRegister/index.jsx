@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Logo from "../../../assets/kenziemovie.svg"
 import { useForm } from "react-hook-form";
 import { BsArrowLeft } from "react-icons/bs"
 import { Input } from "../../Input";
@@ -22,49 +23,49 @@ export const FormRegister = () => {
             <section className={styles.register}>
                 <header className={styles.header}>
                     <div className={styles.divHeader}>
-                        <p className={styles.logo}>kenziemovie</p>
-                        <Link to="/">
+                        <img src={Logo} alt="Kenzie Movie icon" />
+                        <Link to="/login">
                             <button className={styles.buttonLogin}>Login</button>
                         </Link>
                     </div>
                 </header>
                 <main className={styles.mainRegister}>
-                    <div className={styles.divForm}>
-                        <h2 className="title1">Cadastro</h2>
-                        <Link  className="menuItem link" to="/"><BsArrowLeft /> Voltar</Link>
-                    </div>
-                    <p className="paragraph">Preencha os campos para cadastrar-se</p>
-                    <form className={styles.formRegister} onSubmit={handleSubmit(submit)}>
-                        <div className={styles.divInputs}>
-                            <Input
-                                {...register("name")}
-                                type="text"
-                                placeholder="Nome"
-                                errors={errors.name}
-                            />
-                            <Input
-                                {...register("email")}
-                                type="email"
-                                placeholder="E-mail"
-                                errors={errors.email}
-                            />
+                    <section>
+                        <div className={styles.divForm}>
+                            <h2 className="title1">Cadastro</h2>
+                            <Link className="menuItem link" to="/"><BsArrowLeft /> Voltar</Link>
                         </div>
-                        <div className={styles.divInputs}>
-                            <Input
-                                {...register("password")}
-                                type="password"
-                                placeholder="Senha"
-                                errors={errors.password}
-                            />
-                            <Input
-                                {...register("confirm_password")}
-                                type="password"
-                                placeholder="Confirmar Senha"
-                                errors={errors.confirm_password}
-                            />
-                        </div>
-                        <button className={styles.registerButton} type="submit">Cadastrar-se</button>
-                    </form>
+                        <p className="paragraph">Preencha os campos para cadastrar-se</p>
+                        <form className={styles.formRegister} onSubmit={handleSubmit(submit)}>
+                            <div className={styles.divInputs}>
+                                <Input
+                                    {...register("name")}
+                                    type="text"
+                                    placeholder="Nome"
+                                    errors={errors.name}
+                                />
+                                <Input
+                                    {...register("email")}
+                                    type="email"
+                                    placeholder="E-mail"
+                                    errors={errors.email}
+                                />
+                                <Input
+                                    {...register("password")}
+                                    type="password"
+                                    placeholder="Senha"
+                                    errors={errors.password}
+                                />
+                                <Input
+                                    {...register("confirm_password")}
+                                    type="password"
+                                    placeholder="Confirmar Senha"
+                                    errors={errors.confirm_password}
+                                />
+                            </div>
+                            <button className={styles.registerButton} type="submit">Cadastrar-se</button>
+                        </form>
+                    </section>
                 </main>
                 <Footer />
             </section >

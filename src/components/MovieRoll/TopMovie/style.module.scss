@@ -1,12 +1,13 @@
 .topmovie {
-  width: 80%;
+  width: 75%;
   margin: 0 auto 3rem auto;
 }
 
 .movieimage {
-  border-radius: 42px;
+  border-radius: 2.625rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
+
 }
 
 .movieinfo {
@@ -17,26 +18,27 @@
 }
 
 .movietype {
-  padding: 0.5rem 1rem;
-  border-radius: 255px;
+  padding: .5rem 1rem;
+  border-radius: 15.9375rem;
   background-color: var(--yellow);
+  font-family: var(--font-primary);
   color: var(--grey-2);
   font-size: var(--font-6);
-  font-weight: var(--weigth-1);
+  font-weight: var(--weight-1);
 }
 
 .movieduration {
   font-family: var(--font-secondary);
-  color: var(--white);
+  color: #FFFFFF80;
   font-size: var(--font-5);
-  font-weight: var(--weigth-2);
+  font-weight: var(--weight-2);
 }
 
 .movietitle {
   font-family: var(--font-primary);
   color: var(--white);
   font-size: var(--font-1);
-  font-weight: var(--weigth-1);
+  font-weight: var(--weight-1);
 }
 
 .movierating {
@@ -46,13 +48,21 @@
   justify-content: flex-end;
 
   img {
-    height: 34px;
+    height: 2.125rem;
   }
 
   span {
     font-family: var(--font-primary);
     color: var(--white);
     font-size: var(--font-3);
-    font-weight: var(--weigth-1);
+    font-weight: var(--weight-1);
+  }
+}
+
+@media (max-width: 41.875rem) {
+  .topmovie {
+    width: 90%;
+    margin: 0 auto 3rem auto;
+
   }
 }

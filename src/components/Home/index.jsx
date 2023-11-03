@@ -5,8 +5,11 @@ import { HomeList } from "./HomeList";
 import { FiStar } from "react-icons/fi";
 import { HomeCard } from "./HomeCard";
 import { Footer } from "../Footer";
+import { useNavigate } from "react-router-dom";
 
 export const Home = () => {
+
+    const navigate = useNavigate();
     const [user, setUser] = useState(null);
 
     const [avaliationList, setAvaliationList] = useState([]);
@@ -15,6 +18,10 @@ export const Home = () => {
 
     const [isVisibleEdit, setIsVisibleEdit] = useState(false);
 
+
+    const handleClick = () => {
+        navigate('/')
+    }
 
     return (
         <section className={Style.internalPage}>
@@ -27,7 +34,7 @@ export const Home = () => {
                             {/* <h3>{user?.name}</h3> */}
                             <h3 className="menuItem">José da Silva</h3>
                         </div>
-                        <button className="title2" type="submit">Sair</button>
+                        <button className="title2" type="submit" onClick={handleClick}>Sair</button>
                     </div>
                 </div>
             </header>
@@ -36,10 +43,10 @@ export const Home = () => {
                     <div className={`${Style.infoHeader}`}>
                         <div className={`${Style.text}`}>
                             <p className={`buttonSmall`}>Ficção</p>
-                            <h2 className={`title1`}>The Random Heros</h2>
-                        </div>
-                        <div>
                             <p className={`paragraph alignRight`}>90m</p>
+                        </div>
+                        <div className={`${Style.text}`}>
+                            <h2 className={`title1 nowrap`}>The Random Heros</h2>
 
                             <p className={`title1-mobileB`}><FiStar color="var(--yellow)" /> 5.0</p>
 
