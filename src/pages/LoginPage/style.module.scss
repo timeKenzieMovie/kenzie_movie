@@ -18,30 +18,7 @@
 .main {
     width: 40%;
     height: auto;
-    margin-top: 3.125rem;
-    margin-left: 12.5rem;
+    margin-top: 50px;
+    margin-left: 200px;
     background: var(--grey-2);
-}
-
-@media (max-width:41.875rem) {
-    .login {
-        width: auto;
-        height: auto;
-    }
-
-    .pageLogin {
-        width: auto;
-        height: 100%;
-        background-image: url("../../assets/login_background.jpg");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-
-    .main {
-        width: 75%;
-        height: auto;
-        margin: 3.125rem auto;
-        background: var(--grey-2);
-    }
 }

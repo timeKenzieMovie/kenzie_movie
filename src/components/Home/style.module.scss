@@ -1,17 +1,15 @@
 .internalPage {
     background-color: var(--grey-2);
     color: var(--white);
-
-    padding: 0 0 1.875rem 0;
+    padding: 0 0 30px 0;
+    border: 1px solid white;
 
 
     &>header {
         background-image: url("../../assets/BackgroundImage.png");
-        height: 39.9375rem;
+        height: 639px;
         width: 100%;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
+        // border: 1px solid white;
 
         &>div {
             width: 75%;
@@ -20,42 +18,37 @@
             flex-direction: row;
             align-items: center;
             justify-content: space-between;
-            padding: 1.25rem;
+            padding: 20px;
+            // border: 1px solid red;
 
             &>div {
-                width: 75%;
-                margin: 0 auto;
                 display: flex;
                 flex-direction: row;
                 align-items: center;
-                gap: 1.875rem;
+                gap: 30px;
+                // border: 1px solid white;
 
                 &>div {
                     display: flex;
                     flex-direction: row;
                     align-items: center;
-                    gap: .625rem;
+                    gap: 10px;
+                    // border: 1px solid white;
 
-                    &>div {
+                    &>p {
                         display: flex;
-                        flex-direction: row;
                         align-items: center;
-                        gap: 10px;
-                        // border: 1px solid white;
-
-                        &>p {
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            color: var(--white);
-                        }
+                        justify-content: center;
+                        color: var(--white);
                     }
                 }
             }
         }
+    }
 
     &>main {
         width: 100%;
+        // border: 1px solid red;
 
         &>.principalAvaliation {
             width: 75%;
@@ -64,220 +57,59 @@
             justify-content: space-between;
             align-items: flex-start;
             flex-direction: column;
-            gap: 2.1875rem;
+            gap: 35px;
+            // border: 1px solid red;
+
 
             &>.infoHeader {
                 width: 100%;
                 display: flex;
-                flex-direction: column;
+                flex-direction: row;
                 justify-content: space-between;
                 align-items: center;
-                gap: 1.875rem;
-                margin-top: -9rem;
+                gap: 30px;
+                margin-top: -110px;
+                // border: 1px solid blue;
 
                 &>.text {
-                    width: 100%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
 
+                    // border: 1px solid red;
                     &>p {
                         display: flex;
                         align-items: center;
                         justify-content: center;
-                        gap: .625rem;
+                        // border: 1px solid yellow;
                     }
                 }
 
                 &>.infoAvaliation {
-                    width: 58.625rem;
-                    height: 18rem;
+                    width: 938px;
+                    height: 288px;
+                    // border: 1px solid white;
                 }
             }
         }
 
+
         &>.listAvaliation {
             width: 100%;
-
+            
             &>div {
                 width: 75%;
-                margin: 1.875rem auto;
+                margin: 30px auto;
+                // border: 1px solid white;
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
+                // padding: 30px;
 
                 &>button {
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    gap: .75rem;
+                    gap: 12px;
                 }
             }
         }
     }
-}
-
-@media (max-width: 41.875rem) {
-    .internalPage {
-        background-color: var(--grey-2);
-        color: var(--white);
-        padding: 0 0 1.875rem 0;
-
-        &>header {
-            background-image: url("../../assets/BackgroundImage.png");
-            height: 39.9375rem;
-            width: 100%;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-
-            &>div {
-                width: 90%;
-                margin: 0 auto;
-                display: flex;
-                flex-wrap: wrap;
-                flex-direction: row;
-                align-items: center;
-                justify-content: space-between;
-                padding: 1.25rem;
-                gap: 1rem;
-
-                &>div {
-                    width: 100%;
-                    display: flex;
-                    flex-direction: row;
-                    align-items: center;
-                    justify-content: space-between;
-                    gap: 1.875rem;
-                }
-            }
-        }
-
-        &>main {
-            width: 100%;
-
-            &>.principalAvaliation {
-                width: 90%;
-                margin: 0 auto;
-                display: flex;
-                justify-content: space-between;
-                align-items: flex-start;
-                flex-direction: column;
-                gap: 2.1875rem;
-
-                &>.infoHeader {
-                    width: 100%;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-between;
-                    align-items: center;
-                    gap: 1.875rem;
-                    margin-top: -9rem;
-
-                    &>.text {
-                        width: 100%;
-                        display: flex;
-                        align-items: center;
-                        justify-content: space-between;
-
-                        &>p {
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            gap: .625rem;
-                        }
-                    }
-
-                    &>.infoAvaliation {
-                        width: 58.625rem;
-                        height: 18rem;
-                    }
-                }
-            }
-
-            &>.listAvaliation {
-                width: 100%;
-
-                &>div {
-                    width: 75%;
-                    margin: 1.875rem auto;
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-
-                 &>button {
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        gap: .75rem;
-                    }
-                }
-            }
-        }
-    }
-}
-
-@media (max-width:29.6875rem) {
-    .internalPage {
-        background-color: var(--grey-2);
-        color: var(--white);
-        padding: 0 0 1.875rem 0;
-
-        &>main {
-            width: 100%;
-
-            &>.principalAvaliation {
-                width: 90%;
-                margin: 0 auto;
-                display: flex;
-                justify-content: space-between;
-                align-items: flex-start;
-                flex-direction: column;
-                gap: 2.1875rem;
-
-                &>.infoHeader {
-                    width: 100%;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-between;
-                    align-items: center;
-                    gap: .625rem;
-                    margin-top: -11.5625rem;
-                }
-            }
-
-        }
-    }
-}
-
-@media (max-width:21.1875rem) {
-    .internalPage {
-        background-color: var(--grey-2);
-        color: var(--white);
-        padding: 0 0 1.875rem 0;
-
-        &>main {
-            width: 100%;
-            &>.principalAvaliation {
-                width: 90%;
-                margin: 0 auto;
-                display: flex;
-                justify-content: space-between;
-                align-items: flex-start;
-                flex-direction: column;
-                gap: 2.1875rem;
-
-                &>.infoHeader {
-                    width: 100%;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-between;
-                    align-items: center;
-                    gap: .625rem;
-                    margin-top: -15.625rem;
-                }
-            }
-        }
-    }
-}
 }

@@ -1,5 +1,6 @@
 .movie {
   width: 32%;
+  // border: 1px solid red;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,8 +11,6 @@
 .movieimage {
   width: 100%;
   border-radius: 30px; 
-  cursor: pointer;
-  border-radius: 1.875rem;
 }
 
 .movieinfo {
@@ -20,15 +19,17 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  // border: 1px solid red;
 }
 
 .movietype {
-  padding: .5rem 1rem;
-  border-radius: 15.9375rem;
+  padding: 0.5rem 1rem;
+  border-radius: 255px;
   background-color: var(--yellow);
   color: var(--grey-2);
   font-size: var(--font-6);
   font-weight: var(--weight-1);
+  // border: 1px solid red;
 }
 
 .movieduration {
@@ -52,7 +53,7 @@
   justify-content: flex-end;
 
   img {
-    height: 2.125rem;
+    height: 34px;
   }
 
   span {
@@ -60,23 +61,5 @@
     color: var(--white);
     font-size: var(--font-3);
     font-weight: var(--weight-1);
-  }
-}
-
-@media (max-width: 41.875rem) {
-  .movie {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 1rem;
-  }
-
-  .movietitle {
-    color: var(--white);
-    font-size: var(--font-1);
-    font-weight: var(--weight-1);
-
   }
 }

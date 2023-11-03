@@ -1,12 +1,14 @@
 .topmovie {
   width: 75%;
   margin: 0 auto 3rem auto;
+  // border: 1px solid red;
 }
 
 .movieimage {
-  border-radius: 2.625rem;
+  border-radius: 42px;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  // border: 1px solid red;
 
 }
 
@@ -15,16 +17,18 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  // border: 1px solid red;
 }
 
 .movietype {
-  padding: .5rem 1rem;
-  border-radius: 15.9375rem;
+  padding: 0.5rem 1rem;
+  border-radius: 255px;
   background-color: var(--yellow);
   font-family: var(--font-primary);
   color: var(--grey-2);
   font-size: var(--font-6);
   font-weight: var(--weight-1);
+  // border: 1px solid red;
 }
 
 .movieduration {
@@ -32,6 +36,7 @@
   color: #FFFFFF80;
   font-size: var(--font-5);
   font-weight: var(--weight-2);
+  // border: 1px solid red;
 }
 
 .movietitle {
@@ -46,9 +51,10 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
+  // border: 1px solid red;
 
   img {
-    height: 2.125rem;
+    height: 34px;
   }
 
   span {
@@ -56,13 +62,5 @@
     color: var(--white);
     font-size: var(--font-3);
     font-weight: var(--weight-1);
-  }
-}
-
-@media (max-width: 41.875rem) {
-  .topmovie {
-    width: 90%;
-    margin: 0 auto 3rem auto;
-
   }
 }

@@ -1,6 +1,6 @@
-import { Link, useNavigate } from "react-router-dom";
-import Logo from "../../assets/kenziemovie.svg";
-import styles from "./style.module.scss";
+import { Link, useNavigate } from "react-router-dom"
+import Logo from "../../assets/kenziemovie.svg"
+import styles from "./style.module.scss"
 
 export const Header = () => {
     const navigate = useNavigate();
