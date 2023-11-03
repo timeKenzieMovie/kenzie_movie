@@ -1,16 +1,22 @@
 import styles from "./style.module.scss";
 import star from "../../../assets/star.png";
+import { useNavigate } from "react-router-dom";
 
 
-export const Movie = ({ movie, handleClick }) => {
-
+export const Movie = ({ movie }) => {
+  const navigate = useNavigate();
   const rating = movie.reviews.length > 0 ?
     movie.reviews.reduce((total, value) => total + value.score, 0) / movie.reviews.length :
     5;
 
+  const handleClick = () => {
+    localStorage.setItem("@kenziemovie-CurrentMovie", movie.id);
+    navigate("/home");
+  }
+
   return (
-    <div className={styles.movie}>
-      <img className={styles.movieimage} src={movie.image} alt={movie.name} onClick={handleClick} />
+    <div onClick={handleClick} className={styles.movie}>
+      <img className={styles.movieimage} src={movie.image} alt={movie.name} />
       <div className={styles.movieinfo}>
         <p className={styles.movietype}>{movie.type}</p>
         <p className={styles.movieduration}>{`${movie.duration}m`}</p>

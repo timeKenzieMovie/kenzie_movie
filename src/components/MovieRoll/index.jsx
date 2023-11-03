@@ -1,41 +1,21 @@
 import styles from "./style.module.scss";
 import { Movie } from "./Movie";
 import { TopMovie } from "./TopMovie";
-import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
-import { api } from "../../services/api";
+import { useContext, useEffect } from "react";
+import { MovieContext } from "../../providers/MovieContext";
 
-export const MovieRoll = ({ moviesList, setMoviesList }) => {
+export const MovieRoll = () => {
+  const { moviesList, getMovies } = useContext(MovieContext);
 
-  const navigate = useNavigate();
+  useEffect(() => {
+    getMovies();
+  }, []);
 
-  console.log(moviesList);
-
-  // useEffect(() => {
-  //   const getMoviesById = async () => {
-  //     try {
-  //       const { data } = await api.get(`/movies/${moviesList.id}?_embed=reviews`);
-  //       console.log(data);
-  //       setMoviesList(data);
-
-  //     } catch (error) {
-  //       console.error(error);
-  //     }
-  //   }
-  //   getMoviesById();
-  // }, []);
-
-  const handleClick = () => {
-    // getMovie(moviesList.id)
-    navigate("/home")
-  }
-  console.log(handleClick);
-  
   return (
     <>
-      {moviesList.length > 0 && <TopMovie movie={moviesList[0]} handleClick={handleClick} />}
+      {moviesList.length > 0 && <TopMovie movie={moviesList[0]} />}
       <ul className={styles.movielist}>
-        {moviesList.slice(1).map(movie => <Movie key={movie.id} movie={movie} handleClick={handleClick} />)}
+        {moviesList.slice(1).map(movie => <Movie key={movie.id} movie={movie} />)}
       </ul>
     </>
   );

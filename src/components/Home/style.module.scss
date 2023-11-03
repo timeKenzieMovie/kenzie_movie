@@ -4,14 +4,6 @@
 
     padding: 0 0 1.875rem 0;
 
-<<<<<<< HEAD
-    &>div {
-        &>header {
-            background-image: url("../../assets/BackgroundImage.png");
-            height: 639px;
-            width: 100%;
-            // border: 1px solid white;
-=======
 
     &>header {
         background-image: url("../../assets/BackgroundImage.png");
@@ -29,7 +21,6 @@
             align-items: center;
             justify-content: space-between;
             padding: 1.25rem;
->>>>>>> develop
 
             &>div {
                 width: 75%;
@@ -37,24 +28,13 @@
                 display: flex;
                 flex-direction: row;
                 align-items: center;
-<<<<<<< HEAD
-                justify-content: space-between;
-                padding: 20px;
-                // border: 1px solid red;
-=======
                 gap: 1.875rem;
->>>>>>> develop
 
                 &>div {
                     display: flex;
                     flex-direction: row;
                     align-items: center;
-<<<<<<< HEAD
-                    gap: 30px;
-                    // border: 1px solid white;
-=======
                     gap: .625rem;
->>>>>>> develop
 
                     &>div {
                         display: flex;
@@ -74,72 +54,6 @@
             }
         }
 
-<<<<<<< HEAD
-        &>main {
-            width: 100%;
-            // border: 1px solid red;
-
-            &>.principalAvaliation {
-                width: 75%;
-                margin: 0 auto;
-                display: flex;
-                justify-content: space-between;
-                align-items: flex-start;
-                flex-direction: column;
-                gap: 35px;
-                // border: 1px solid red;
-
-
-                &>.infoHeader {
-                    width: 100%;
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: space-between;
-                    align-items: center;
-                    gap: 30px;
-                    margin-top: -110px;
-                    // border: 1px solid blue;
-
-                    &>.text {
-
-                        // border: 1px solid red;
-                        &>p {
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            // border: 1px solid yellow;
-                        }
-                    }
-
-                    &>.infoAvaliation {
-                        width: 938px;
-                        height: 288px;
-                        // border: 1px solid white;
-                    }
-                }
-            }
-
-
-            &>.listAvaliation {
-                width: 100%;
-
-                &>div {
-                    width: 75%;
-                    margin: 30px auto;
-                    // border: 1px solid white;
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    // padding: 30px;
-
-                    &>button {
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        gap: 12px;
-                    }
-                }
-=======
     &>main {
         width: 100%;
 
@@ -362,8 +276,8 @@
                     gap: .625rem;
                     margin-top: -15.625rem;
                 }
->>>>>>> develop
             }
         }
     }
+}
 }

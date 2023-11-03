@@ -24,10 +24,10 @@ export const CreateAvaliationModal = ({setIsVisibleCreate}) => {
                 <div className={`${Style.head}`}>
                     <h2 className="title1">Avaliação</h2>
                     <button onClick={() => setIsVisibleCreate(false)} aria-label="close" title="Fechar">
-                        <MdClose size={21} color="white" />
+                        <MdClose size={21} color="rgba(255, 255, 255, 0.5)" />
                     </button>
                 </div>
-                <div className={`${Style.select}`}>
+                <div>
                     <Select id="score" {...register("score")} error={errors.score}>
                         <option value="">Selecione uma nota</option>
                         <option value="1">1</option>
@@ -42,8 +42,8 @@ export const CreateAvaliationModal = ({setIsVisibleCreate}) => {
                         <option value="10">10</option>
                     </Select>
                 </div>
-                <div className={`${Style.textarea}`}>
-                    <textarea name="description" id="description" placeholder="Deixe um comentário" {...register("description")} error={errors.description}></textarea>
+                <div >
+                    <textarea className={`textarea`} name="description" id="description" placeholder="Deixe um comentário" {...register("description")} error={errors.description}></textarea>
                 </div>
 
                 <button className={`buttonMedium`} type="submit"> <FiStar color="var(--grey-2)" />Avaliar</button>
