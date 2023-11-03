@@ -1,113 +1,114 @@
 .internalPage {
     background-color: var(--grey-2);
     color: var(--white);
-    padding: 0 0 30px 0;
-    border: 1px solid white;
 
+    padding: 0 0 1.875rem 0;
 
-    &>header {
-        background-image: url("../../assets/BackgroundImage.png");
-        height: 639px;
-        width: 100%;
-        // border: 1px solid white;
-
-        &>div {
-            width: 75%;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-            padding: 20px;
-            // border: 1px solid red;
+    &>div {
+        &>header {
+            background-image: url("../../assets/BackgroundImage.png");
+            height: 639px;
+            width: 100%;
+            // border: 1px solid white;
 
             &>div {
+                width: 75%;
+                margin: 0 auto;
                 display: flex;
                 flex-direction: row;
                 align-items: center;
-                gap: 30px;
-                // border: 1px solid white;
+                justify-content: space-between;
+                padding: 20px;
+                // border: 1px solid red;
 
                 &>div {
                     display: flex;
                     flex-direction: row;
                     align-items: center;
-                    gap: 10px;
+                    gap: 30px;
                     // border: 1px solid white;
 
-                    &>p {
+                    &>div {
                         display: flex;
+                        flex-direction: row;
                         align-items: center;
-                        justify-content: center;
-                        color: var(--white);
+                        gap: 10px;
+                        // border: 1px solid white;
+
+                        &>p {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            color: var(--white);
+                        }
                     }
                 }
             }
         }
-    }
 
-    &>main {
-        width: 100%;
-        // border: 1px solid red;
-
-        &>.principalAvaliation {
-            width: 75%;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-direction: column;
-            gap: 35px;
+        &>main {
+            width: 100%;
             // border: 1px solid red;
 
-
-            &>.infoHeader {
-                width: 100%;
+            &>.principalAvaliation {
+                width: 75%;
+                margin: 0 auto;
                 display: flex;
-                flex-direction: row;
                 justify-content: space-between;
-                align-items: center;
-                gap: 30px;
-                margin-top: -110px;
-                // border: 1px solid blue;
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 35px;
+                // border: 1px solid red;
 
-                &>.text {
 
-                    // border: 1px solid red;
-                    &>p {
+                &>.infoHeader {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                    gap: 30px;
+                    margin-top: -110px;
+                    // border: 1px solid blue;
+
+                    &>.text {
+
+                        // border: 1px solid red;
+                        &>p {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            // border: 1px solid yellow;
+                        }
+                    }
+
+                    &>.infoAvaliation {
+                        width: 938px;
+                        height: 288px;
+                        // border: 1px solid white;
+                    }
+                }
+            }
+
+
+            &>.listAvaliation {
+                width: 100%;
+
+                &>div {
+                    width: 75%;
+                    margin: 30px auto;
+                    // border: 1px solid white;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    // padding: 30px;
+
+                    &>button {
                         display: flex;
                         align-items: center;
                         justify-content: center;
-                        // border: 1px solid yellow;
+                        gap: 12px;
                     }
-                }
-
-                &>.infoAvaliation {
-                    width: 938px;
-                    height: 288px;
-                    // border: 1px solid white;
-                }
-            }
-        }
-
-
-        &>.listAvaliation {
-            width: 100%;
-            
-            &>div {
-                width: 75%;
-                margin: 30px auto;
-                // border: 1px solid white;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                // padding: 30px;
-
-                &>button {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    gap: 12px;
                 }
             }
         }

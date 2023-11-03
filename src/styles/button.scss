@@ -12,7 +12,7 @@
     cursor: pointer;
 
     &.round {
-        width: 43px;
+        width: 2.6875rem;
     }
 }
 
@@ -23,18 +23,18 @@
     line-height: var(--font-4);
     background-color: var(--yellow);
     color: var(--grey-2);
-    border-radius: 255px;
+    border-radius: 15.9375rem;
     cursor: pointer;
 }
 
 .buttonMedium {
     @extend %btn;
-    width: 170px;
-    height: 54px;
+    width: 10.625rem;
+    height: 3.375rem;
 }
 
 .buttonLarge {
     @extend %btn;
-    width: 185px;
-    height: 67px;
+    width: 11.5625rem;
+    height: 4.1875rem;
 }
