@@ -1,11 +1,12 @@
 import { createContext, useState } from "react";
+import { api } from "../services/api";
 
 export const MovieContext = createContext({});
 
 export const MovieProvider = ({ children }) => {
   const [ moviesList, setMoviesList ] = useState([]);
   const [ currentMovie, setCurrentMovie ] = useState(null);
-  const [ currentMovieReviews, setCurrentMovieReviews ] = user([]);
+  const [ currentMovieReviews, setCurrentMovieReviews ] = useState([]);
 
   const getMovies = async () => {
     try {
