@@ -5,13 +5,14 @@ import { useNavigate } from "react-router-dom";
 
 export const Movie = ({ movie }) => {
   const navigate = useNavigate();
+
   const rating = movie.reviews.length > 0 ?
     movie.reviews.reduce((total, value) => total + value.score, 0) / movie.reviews.length :
     5;
 
   const handleClick = () => {
     localStorage.setItem("@kenziemovie-CurrentMovie", movie.id);
-    navigate("/home");
+    navigate("/home")
   }
 
   return (

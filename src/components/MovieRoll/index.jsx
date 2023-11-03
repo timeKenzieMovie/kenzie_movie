@@ -11,6 +11,7 @@ export const MovieRoll = () => {
     getMovies();
   }, []);
 
+
   return (
     <>
       {moviesList.length > 0 && <TopMovie movie={moviesList[0]} />}

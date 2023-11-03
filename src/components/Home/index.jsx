@@ -10,6 +10,7 @@ import { MovieContext } from "../../providers/MovieContext";
 
 export const Home = () => {
     const { getMovie, currentMovie, currentMovieReviews } = useContext(MovieContext);
+
     const navigate = useNavigate();
     const [user, setUser] = useState(null);
 
@@ -48,16 +49,14 @@ export const Home = () => {
                         backgroundRepeat: 'no-repeat',
                     }}>
                         <div>
-                            <img src={kenzieMovieIcon} alt="Kenzie Movie Icon" />
                             <div>
-                                <div>
-                                    <p className={`buttonSmall round`}>J</p>
-                                    {/* <h3>{user?.name}</h3> */}
-                                    <h3 className="menuItem">José da Silva</h3>
-                                </div>
-                                <button className="title2" type="submit" onClick={handleClick}>Sair</button>
+                                <p className={`buttonSmall round`}>J</p>
+                                {/* <h3>{user?.name}</h3> */}
+                                <h3 className="menuItem">José da Silva</h3>
                             </div>
+                            <button className="title2" type="submit" onClick={handleClick}>Sair</button>
                         </div>
+
                     </header>
                     <main>
                         <section className={`${Style.principalAvaliation}`} >
@@ -75,22 +74,22 @@ export const Home = () => {
                             </div>
                             <div className={`${Style.infoAvaliation}`}>
                                 <p className={`paragraph alignLeft`}>{currentMovie.synopsis}</p>
-                            </div>
-                        </section>
 
-                        <section className={`${Style.listAvaliation}`}>
-                            <div>
-                                <h2 className={`title1`}>Avaliações</h2>
-                                {/* {user ?  */}
-                                <button onClick={() => setIsVisibleCreate(true)} className={`buttonMedium`}> <FiStar color="var(--grey-2)" />Avaliar</button>
-                                {/* : null} */}
                             </div>
+                            <div>
+                                <p className={`paragraph alignRight`}>{currentMovie.duration}m</p>
+
+                                <p className={`title1-mobileB`}><FiStar color="var(--yellow)" /> 5.0</p>
+
+                            </div>
+
                             <HomeCard avaliationList={avaliationList} setIsVisibleCreate={setIsVisibleCreate} isVisibleCreate={isVisibleCreate} isVisibleEdit={isVisibleEdit} setIsVisibleEdit={setIsVisibleEdit} />
                             <HomeList />
                         </section>
                     </main>
                 </div>
             }
+
             <Footer />
         </section >
     )
