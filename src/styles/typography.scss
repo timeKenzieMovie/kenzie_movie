@@ -6,11 +6,12 @@
 .title1 {
     @extend %title;
     font-size: var(--font-1);
+    font-size: clamp(var(--font-2), 3vw, var(--font-1));
 
     line-height: var(--height-1);
-
-    line-height: var(--height-1);
-    line-height: var(--height-1);
+    &.nowrap {
+        white-space: nowrap
+    }
 
 }
 
@@ -18,16 +19,17 @@
     @extend %title;
     font-size: var(--font-2);
     line-height: var(--height-2);
-
-    line-height: var(--height-2);
 }
 
 .title1-mobileB {
     @extend %title;
     font-size: var(--font-3);
     line-height: var(--height-3);
-    &.center{
-        text-align: center;
+
+    &.center {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.625rem;
     }
 }
 
@@ -41,23 +43,16 @@
     @extend %title;
     font-size: var(--font-4);
     line-height: var(--height-4);
-
-    line-height: var(--height-4);
-
 }
 
 
 %text {
     font-family: var(--font-secondary);
-
-    font-family: var(--font-inter);
-
     font-weight: var(--weight-2);
     color: var(--white);
 }
 
 .paragraph {
-
     .text1 {
         @extend %text;
         font-size: var(--font-5);
@@ -65,38 +60,47 @@
 
     }
 
-    .menuItem {
-        @extend %text;
-        font-size: 1var(--font-6);
-        line-height: var(--height-5);
-
-        &.link {
-            color: var(--yellow);
-        }
-
-
-        .text2 {
-            @extend %text;
-            font-size: 1var(--font-6);
-            line-height: var(--height-5);
-        }
+    &.alignRight {
+        text-align: right;
+        color: #FFFFFF80;
     }
 }
 
-@media (max-width: 41.875rem){
+.menuItem {
+    @extend %text;
+    font-size: 1var(--font-6);
+    line-height: var(--height-5);
+
+    &.link {
+        color: var(--yellow);
+    }
+
+}
+
+.text2 {
+    @extend %text;
+    font-size: 1var(--font-6);
+    line-height: var(--height-5);
+}
+
+
+@media (max-width: 41.875rem) {
     .title1-mobileB {
-        &.center{
+        &.center {
             text-align: center;
         }
     }
+
     .paragraph {
         font-size: var(--font-5);
         line-height: var(--height-5);
-        &.alignRight{
+
+        &.alignRight {
             text-align: right;
             color: #FFFFFF80;
         }
-        &.alignLeft{
+
+        &.alignLeft {
             width: 90%;
         }
 
@@ -107,50 +111,45 @@
         font-size: 1var(--font-6);
         line-height: var(--height-5);
 
-        &.link {
-            color: var(--yellow);
-        }
-
-
-        &.link {
-            color: var(--yellow);
-        }
-
-
-
-        .text2 {
-            @extend %text;
-            font-size: 1var(--font-6);
-            line-height: var(--height-5);
-        }
+    &.link {
+        color: var(--yellow);
     }
 
-@media (max-width: 41.875rem){
+    .text2 {
+        @extend %text;
+        font-size: 1var(--font-6);
+        line-height: var(--height-5);
+
+    }
+}
+
+@media (max-width: 41.875rem) {
     .title1-mobileB {
-        &.center{
+        &.center {
             text-align: center;
         }
     }
+
     .paragraph {
         font-size: var(--font-5);
         line-height: var(--height-5);
-        &.alignRight{
+
+        &.alignRight {
             text-align: right;
             color: #FFFFFF80;
         }
-        &.alignLeft{
+
+        &.alignLeft {
             width: 90%;
         }
     }
 }
 
 
-@media(max-width: 29.6875rem){
+@media(max-width: 29.6875rem) {
     .title1 {
-        @extend %title;
-        font-size: var(--font-1);
-        line-height: var(--height-1);
-        &.nowrap{
+        line-height: var(--height-5);
+        &.nowrap {
             white-space: wrap
         }
     }
