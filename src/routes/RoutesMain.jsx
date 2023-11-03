@@ -20,8 +20,8 @@ export const RoutesMain = () => {
         <Routes>
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
-            <Route path="/" element={<LandingPage moviesList={moviesList}/>} />
-            <Route path="/home" element={<HomePage />} />
+            <Route path="/" element={<LandingPage moviesList={moviesList} setMoviesList={setMoviesList}/>} />
+            <Route path="/home" element={<HomePage moviesList={moviesList} setMoviesList={setMoviesList}/>} />
             <Route path="/*" element={<NotFoundPage />} />
         </Routes>
     )
