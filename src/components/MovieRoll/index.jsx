@@ -2,28 +2,13 @@ import styles from "./style.module.scss";
 import { Movie } from "./Movie";
 import { TopMovie } from "./TopMovie";
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
-import { api } from "../../services/api";
 
-export const MovieRoll = ({ moviesList, setMoviesList }) => {
+
+export const MovieRoll = ({ moviesList }) => {
 
   const navigate = useNavigate();
 
-  console.log(moviesList);
-
-  // useEffect(() => {
-  //   const getMoviesById = async () => {
-  //     try {
-  //       const { data } = await api.get(`/movies/${moviesList.id}?_embed=reviews`);
-  //       console.log(data);
-  //       setMoviesList(data);
-
-  //     } catch (error) {
-  //       console.error(error);
-  //     }
-  //   }
-  //   getMoviesById();
-  // }, []);
+  // console.log(moviesList);
 
   const handleClick = () => {
     // getMovie(moviesList.id)
