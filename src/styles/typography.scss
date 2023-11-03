@@ -8,6 +8,8 @@
     font-size: var(--font-1);
 
     line-height: var(--height-1);
+
+    line-height: var(--height-1);
     line-height: var(--height-1);
 
 }
@@ -60,6 +62,7 @@
         @extend %text;
         font-size: var(--font-5);
         line-height: var(--height-5);
+
     }
 
     .menuItem {
@@ -87,7 +90,48 @@
         }
     }
     .paragraph {
+        font-size: var(--font-5);
+        line-height: var(--height-5);
+        &.alignRight{
+            text-align: right;
+            color: #FFFFFF80;
+        }
+        &.alignLeft{
+            width: 90%;
+        }
+
+    }
+
+    .menuItem {
         @extend %text;
+        font-size: 1var(--font-6);
+        line-height: var(--height-5);
+
+        &.link {
+            color: var(--yellow);
+        }
+
+
+        &.link {
+            color: var(--yellow);
+        }
+
+
+
+        .text2 {
+            @extend %text;
+            font-size: 1var(--font-6);
+            line-height: var(--height-5);
+        }
+    }
+
+@media (max-width: 41.875rem){
+    .title1-mobileB {
+        &.center{
+            text-align: center;
+        }
+    }
+    .paragraph {
         font-size: var(--font-5);
         line-height: var(--height-5);
         &.alignRight{

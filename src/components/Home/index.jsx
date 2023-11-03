@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import kenzieMovieIcon from "../../assets/kenziemovie.svg";
 import Style from "./style.module.scss";
 import { HomeList } from "./HomeList";
@@ -8,9 +8,8 @@ import { Footer } from "../Footer";
 import { useNavigate } from "react-router-dom";
 import { MovieContext } from "../../providers/MovieContext";
 
-export const Home = ({ moviesList, moviesById }) => {
-
-    const { currentMovie, currentMovieReviews } = useContext(MovieContext)
+export const Home = () => {
+    const { getMovie, currentMovie, currentMovieReviews } = useContext(MovieContext);
 
     const navigate = useNavigate();
     const [user, setUser] = useState(null);
@@ -26,6 +25,11 @@ export const Home = ({ moviesList, moviesById }) => {
         navigate('/')
     }
 
+    useEffect(() => {
+        const movieId = localStorage.getItem("@kenziemovie-CurrentMovie");
+        getMovie(movieId);
+    }, []);
+
     // const rating = moviesList.map(movie => {
     //     movie.reviews.id.length > 0 ?
     //         movie.reviews.reduce((total, value) => total + value.score, 0) / movie.reviews.id.length :
@@ -35,10 +39,10 @@ export const Home = ({ moviesList, moviesById }) => {
 
     return (
         <section className={Style.internalPage} >
-            <div>
-                <header>
-                    <div>
-                        <img src={kenzieMovieIcon} alt="Kenzie Movie Icon" />
+            {currentMovie && 
+                <div>
+                    <header>
+
                         <div>
                             <div>
                                 <p className={`buttonSmall round`}>J</p>
@@ -47,14 +51,25 @@ export const Home = ({ moviesList, moviesById }) => {
                             </div>
                             <button className="title2" type="submit" onClick={handleClick}>Sair</button>
                         </div>
-                    </div>
-                </header>
-                <main>
-                    <section className={`${Style.principalAvaliation}`} >
-                        <div className={`${Style.infoHeader}`}>
-                            <div className={`${Style.text}`}>
-                                <p className={`buttonSmall`}>{currentMovie.type}</p>
-                                <h2 className={`title1`}>{currentMovie.name}</h2>
+
+                    </header>
+                    <main>
+                        <section className={`${Style.principalAvaliation}`} >
+                            <div className={`${Style.infoHeader}`}>
+                                <div className={`${Style.text}`}>
+                                    <p className={`buttonSmall`}>{currentMovie.type}</p>
+                                    <h2 className={`title1`}>{currentMovie.name}</h2>
+                                </div>
+                                <div>
+                                    <p className={`paragraph alignRight`}>{currentMovie.duration}m</p>
+
+                                    <p className={`title1-mobileB`}><FiStar color="var(--yellow)" /> 5.0</p>
+
+                                </div>
+                            </div>
+                            <div className={`${Style.infoAvaliation}`}>
+                                <p className={`paragraph alignLeft`}>{currentMovie.synopsis}</p>
+
                             </div>
                             <div>
                                 <p className={`paragraph alignRight`}>{currentMovie.duration}m</p>
@@ -62,24 +77,13 @@ export const Home = ({ moviesList, moviesById }) => {
                                 <p className={`title1-mobileB`}><FiStar color="var(--yellow)" /> 5.0</p>
 
                             </div>
-                        </div>
-                        <div className={`${Style.infoAvaliation}`}>
-                            <p className={`paragraph alignLeft`}>{currentMovie.synopsis}</p>
-                        </div>
-                    </section>
 
-                    <section className={`${Style.listAvaliation}`}>
-                        <div>
-                            <h2 className={`title1`}>Avaliações</h2>
-                            {/* {user ?  */}
-                            <button onClick={() => setIsVisibleCreate(true)} className={`buttonMedium`}> <FiStar color="var(--grey-2)" />Avaliar</button>
-                            {/* : null} */}
-                        </div>
-                        <HomeCard avaliationList={avaliationList} setIsVisibleCreate={setIsVisibleCreate} isVisibleCreate={isVisibleCreate} isVisibleEdit={isVisibleEdit} setIsVisibleEdit={setIsVisibleEdit} />
-                        <HomeList />
-                    </section>
-                </main>
-            </div>
+                            <HomeCard avaliationList={avaliationList} setIsVisibleCreate={setIsVisibleCreate} isVisibleCreate={isVisibleCreate} isVisibleEdit={isVisibleEdit} setIsVisibleEdit={setIsVisibleEdit} />
+                            <HomeList />
+                        </section>
+                    </main>
+                </div>
+            }
 
             <Footer />
 
