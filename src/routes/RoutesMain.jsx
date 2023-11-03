@@ -10,9 +10,9 @@ import { RegisterPage } from "../pages/RegisterPage"
 export const RoutesMain = () => {
     return (
         <Routes>
-            <Route path="/" element={<LoginPage />} />
+            <Route path="/" element={<LandingPage />} />
             <Route path="/register" element={<RegisterPage />} />
-            <Route path="/landing" element={<LandingPage />} />
+            <Route path="/login" element={<LoginPage />} />
             <Route path="/home" element={<HomePage />} />
             <Route path="/*" element={<NotFoundPage />} />
         </Routes>
