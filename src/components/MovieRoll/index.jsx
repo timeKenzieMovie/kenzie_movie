@@ -10,6 +10,7 @@ export const MovieRoll = () => {
   useEffect(() => {
     getMovies();
   }, []);
+  // console.log("teste")
 
   return (
     <>
