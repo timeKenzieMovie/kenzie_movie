@@ -3,14 +3,6 @@
     color: var(--white);
     padding: 0 0 1.875rem 0;
 
-<<<<<<< HEAD
-    &>div {
-        &>header {
-            background-image: url("../../assets/BackgroundImage.png");
-            height: 639px;
-            width: 100%;
-            // border: 1px solid white;
-=======
     &>header {
         &>div {
             width: 75%;
@@ -21,7 +13,6 @@
             align-items: center;
             padding: 1.25rem;
 
->>>>>>> d84f98f8c544c1525ddb82d73e0fb1263c7f3591
 
             &>div {
                 width: auto;
@@ -29,52 +20,19 @@
                 flex-direction: row;
                 align-items: center;
                 justify-content: space-between;
-<<<<<<< HEAD
-                padding: 20px;
-                // border: 1px solid red;
-=======
                 gap: 1.875rem;
 
->>>>>>> d84f98f8c544c1525ddb82d73e0fb1263c7f3591
 
                 &>div {
                     display: flex;
                     flex-direction: row;
                     align-items: center;
-<<<<<<< HEAD
-                    gap: 30px;
-                    // border: 1px solid white;
-
-                    &>div {
-                        display: flex;
-                        flex-direction: row;
-                        align-items: center;
-                        gap: 10px;
-                        // border: 1px solid white;
-
-                        &>p {
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            color: var(--white);
-                        }
-                    }
-=======
                     gap: .625rem;
->>>>>>> d84f98f8c544c1525ddb82d73e0fb1263c7f3591
                 }
             }
         }
     }
 
-<<<<<<< HEAD
-        &>main {
-            width: 100%;
-            // border: 1px solid red;
-
-            &>.principalAvaliation {
-                width: 75%;
-=======
     main {
         width: 100%;
 
@@ -250,71 +208,16 @@
 
             &>.principalAvaliation {
                 width: 90%;
->>>>>>> d84f98f8c544c1525ddb82d73e0fb1263c7f3591
                 margin: 0 auto;
                 display: flex;
                 justify-content: space-between;
                 align-items: flex-start;
                 flex-direction: column;
-<<<<<<< HEAD
-                gap: 35px;
-                // border: 1px solid red;
-
-=======
                 gap: 2.1875rem;
->>>>>>> d84f98f8c544c1525ddb82d73e0fb1263c7f3591
 
                 &>.infoHeader {
                     width: 100%;
                     display: flex;
-<<<<<<< HEAD
-                    flex-direction: row;
-                    justify-content: space-between;
-                    align-items: center;
-                    gap: 30px;
-                    margin-top: -110px;
-                    // border: 1px solid blue;
-
-                    &>.text {
-
-                        // border: 1px solid red;
-                        &>p {
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            // border: 1px solid yellow;
-                        }
-                    }
-
-                    &>.infoAvaliation {
-                        width: 938px;
-                        height: 288px;
-                        // border: 1px solid white;
-                    }
-                }
-            }
-
-
-            &>.listAvaliation {
-                width: 100%;
-
-                &>div {
-                    width: 75%;
-                    margin: 30px auto;
-                    // border: 1px solid white;
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    // padding: 30px;
-
-                    &>button {
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        gap: 12px;
-                    }
-                }
-=======
                     flex-direction: column;
                     justify-content: space-between;
                     align-items: center;
@@ -349,7 +252,6 @@
                 align-items: center;
                 gap: .625rem;
                 margin-top: -28.125rem;
->>>>>>> d84f98f8c544c1525ddb82d73e0fb1263c7f3591
             }
         }
     }
