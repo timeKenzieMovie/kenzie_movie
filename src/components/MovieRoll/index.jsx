@@ -1,6 +1,7 @@
 import styles from "./style.module.scss";
 import { Movie } from "./Movie";
 import { TopMovie } from "./TopMovie";
+<<<<<<< HEAD
 import { useNavigate } from "react-router-dom";
 import { useContext, useEffect } from "react";
 import { api } from "../../services/api";
@@ -34,11 +35,24 @@ export const MovieRoll = () => {
   }
   // console.log(handleClick);
   
+=======
+import { useContext, useEffect } from "react";
+import { MovieContext } from "../../providers/MovieContext";
+
+export const MovieRoll = () => {
+  const { moviesList, getMovies } = useContext(MovieContext);
+
+  useEffect(() => {
+    getMovies();
+  }, []);
+
+
+>>>>>>> d84f98f8c544c1525ddb82d73e0fb1263c7f3591
   return (
     <>
-      {moviesList.length > 0 && <TopMovie movie={moviesList[0]} handleClick={handleClick} />}
+      {moviesList.length > 0 && <TopMovie movie={moviesList[0]} />}
       <ul className={styles.movielist}>
-        {moviesList.slice(1).map(movie => <Movie key={movie.id} movie={movie} handleClick={handleClick} />)}
+        {moviesList.slice(1).map(movie => <Movie key={movie.id} movie={movie} />)}
       </ul>
     </>
   );

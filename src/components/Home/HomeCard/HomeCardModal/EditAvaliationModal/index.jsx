@@ -23,12 +23,12 @@ export const EditAvaliationModal = ({setIsVisibleEdit}) => {
         <div role="dialog" className={`${Style.overlayBox}`}>
             <form onSubmit={handleSubmit(submit)} className={`${Style.flexbox}`}>
                 <div className={`${Style.head}`}>
-                    <h2 className="title1">Editar Avaliação</h2>
+                    <h2 className="title1 nowrap">Editar Avaliação</h2>
                     <button onClick={() => setIsVisibleEdit(false)} aria-label="close" title="Fechar">
-                        <MdClose size={21} color="white" />
+                        <MdClose size={21} color="rgba(255, 255, 255, 0.5)" />
                     </button>
                 </div>
-                <div className={`${Style.select}`}>
+                <div>
                     <Select id="score" {...register("score")} error={errors.score}>
                         <option value="">Selecione uma nota</option>
                         <option value="1">1</option>
@@ -43,11 +43,11 @@ export const EditAvaliationModal = ({setIsVisibleEdit}) => {
                         <option value="10">10</option>
                     </Select>
                 </div>
-                <div className={`${Style.textarea}`}>
-                    <textarea name="description" id="description" placeholder="Deixe um comentário" {...register("description")} error={errors.description}></textarea>
+                <div>
+                    <textarea className={`textarea`} name="description" id="description" placeholder="Deixe um comentário" {...register("description")} error={errors.description}></textarea>
                 </div>
 
-                <button className={`buttonMedium`} type="submit"> <FiStar color="var(--grey-2)" />Avaliar</button>
+                <button className={`buttonMedium`} type="submit"> <FiStar color="var(--grey-2)" />Atualizar</button>
             </form>
         </div>
     )
