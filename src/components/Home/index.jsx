@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import kenzieMovieIcon from "../../assets/kenziemovie.svg";
 import Style from "./style.module.scss";
 import { HomeList } from "./HomeList";

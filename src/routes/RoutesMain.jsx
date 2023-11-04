@@ -5,6 +5,7 @@ import { HomePage } from "../pages/Home";
 import { LoginPage } from "../pages/LoginPage";
 import { RegisterPage } from "../pages/RegisterPage";
 import { MovieContext } from "../providers/MovieContext";
+import { useContext, useEffect } from "react";
 
 
 
