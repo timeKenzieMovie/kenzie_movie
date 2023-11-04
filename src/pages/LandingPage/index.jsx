@@ -5,13 +5,13 @@ import { MovieRoll } from "../../components/MovieRoll";
 
 
 // Home
-export const LandingPage = ({moviesList, setMoviesList}) => {
+export const LandingPage = () => {
 
 
     return (
         <div className={styles.landingpage}>
             <Header />
-            <MovieRoll moviesList={moviesList} setMoviesList={setMoviesList} />
+            <MovieRoll />
             <Footer />
         </div>
     )

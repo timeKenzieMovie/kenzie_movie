@@ -2,14 +2,17 @@ import styles from "./style.module.scss";
 import { Movie } from "./Movie";
 import { TopMovie } from "./TopMovie";
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { api } from "../../services/api";
+import { UserContext } from "../../providers/UserContext";
+import { MovieContext } from "../../providers/MovieContext";
 
-export const MovieRoll = ({ moviesList, setMoviesList }) => {
+export const MovieRoll = () => {
 
   const navigate = useNavigate();
-
-  console.log(moviesList);
+  const {users} = useContext(UserContext);
+  const {moviesList, setMoviesList} = useContext(MovieContext);
+  // console.log(moviesList);
 
   // useEffect(() => {
   //   const getMoviesById = async () => {
@@ -29,7 +32,7 @@ export const MovieRoll = ({ moviesList, setMoviesList }) => {
     // getMovie(moviesList.id)
     navigate("/home")
   }
-  console.log(handleClick);
+  // console.log(handleClick);
   
   return (
     <>

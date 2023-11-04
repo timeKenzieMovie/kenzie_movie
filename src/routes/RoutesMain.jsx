@@ -10,7 +10,7 @@ import { MovieContext } from "../providers/MovieContext";
 
 
 export const RoutesMain = () => {
-    const { moviesList, getMovies } = useContext(MovieContext);
+    const { moviesList, getMovies, setMoviesList } = useContext(MovieContext);
 
     useEffect(() => {
         getMovies();
