@@ -7,12 +7,14 @@ import { useContext } from "react";
 import { UserContext } from "../../../providers/UserContext";
 import { MovieContext } from "../../../providers/MovieContext";
 
-export const HomeCard = () => {
+export const HomeCard = ({ userReview }) => {
 
     const { user, avaliationList, isVisibleCreate, setIsVisibleCreate, isVisibleEdit, setIsVisibleEdit } = useContext(UserContext);
     const { currentMovieReviews } = useContext(MovieContext);
 
-    console.log(currentMovieReviews)
+    const handleCreateReview = () => {
+        setIsVisibleCreate(true);
+    }
 
     return (
         //<div>
@@ -38,7 +40,7 @@ export const HomeCard = () => {
             {user ?
                 <div className={Style.avaliationTitle}>
                     <h3 className="title1">Avaliações</h3>
-                    <button className="buttonSmall"><MdStarOutline/> Avaliar</button>
+                    {!userReview && <button onClick={handleCreateReview} className="buttonSmall"><MdStarOutline/> Avaliar</button>}
                 </div> :
                 <div>
                     <h3 className="title-1">Avaliações</h3>
@@ -46,7 +48,7 @@ export const HomeCard = () => {
             }
 
 
-            {user ?
+            {userReview &&
                 <ul>
                     <li>
                         <p>Sua avaliação</p>
@@ -63,8 +65,7 @@ export const HomeCard = () => {
                             </div>
                         </div>
                     </li>
-                </ul>
-                : null}
+                </ul>}
 
             {isVisibleCreate ? <CreateAvaliationModal /> : null}
             {isVisibleEdit ? <EditAvaliationModal /> : null}

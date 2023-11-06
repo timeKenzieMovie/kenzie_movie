@@ -1,0 +1,19 @@
+.card {
+  width: 25.8125rem;
+  height: 29.3125rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .625rem;
+
+  .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .text {
+    width: 18.875rem;
+    height: 13.5rem;
+  }
+}

@@ -11,7 +11,7 @@ import { MovieContext } from "../../providers/MovieContext";
 import { Header } from "../Header";
 
 export const Home = () => {
-    const { getMovie, currentMovie, currentMovieReviews, moviesList } = useContext(MovieContext);
+    const { getMovie, currentMovie, currentMovieReviews } = useContext(MovieContext);
     const { user, logout } = useContext(UserContext);
 
     const navigate = useNavigate();
@@ -22,12 +22,11 @@ export const Home = () => {
         getMovie(movieId);
     }, []);
 
-    // const rating = moviesList.map(movie => {
-    //     movie.reviews.id.length > 0 ?
-    //         movie.reviews.reduce((total, value) => total + value.score, 0) / movie.reviews.id.length :
-    //         5;
-    // })
-    // console.log(rating);
+    const rating = currentMovieReviews?.length > 0 ?
+        currentMovieReviews.reduce((total, value) => total + value.score, 0) / currentMovieReviews.length :
+        5;
+
+    const userReview = user ? currentMovieReviews.filter(review => review.userId === user.id)[0] : null;
 
     return (
         <section>
@@ -50,24 +49,24 @@ export const Home = () => {
                             <div className={`${Style.infoHeader}`}>
                                 <div className={`${Style.text}`}>
                                     <p className={`buttonSmall`}>{currentMovie.type}</p>
-                                    <p className={`paragraph alignRight`}>{currentMovie.duration}</p>
+                                    <p className={`paragraph alignRight`}>{`${currentMovie.duration}m`}</p>
                                 </div>
                                 <div className={Style.text2}>
                                     <h2 className={`title1`}>{currentMovie.name}</h2>
-                                    <p className={`title1-mobileB center`}><FiStar color="var(--yellow)" /> 5.0</p>
+                                    <p className={`title1-mobileB center`}><FiStar color="var(--yellow)" />{` ${rating.toFixed(1)}`}</p>
                                 </div>
                             </div>
                             <div className={`${Style.infoAvaliation}`}>
                                 <p className={`paragraph alignLeft`}>{currentMovie.synopsis}</p>
                             </div>
                             <div>
-                                <p className={`paragraph alignRight`}>{currentMovie.duration}</p>
-                                <p className={`title1-mobileB`}><FiStar color="var(--yellow)" /> 5.0</p>
+                                <p className={`paragraph alignRight`}>{`${currentMovie.duration}m`}</p>
+                                <p className={`title1-mobileB`}><FiStar color="var(--yellow)" />{` ${rating.toFixed(1)}`}</p>
                             </div>
                         </>}
 
-                        <HomeCard />
-                        <HomeList />
+                        <HomeCard userReview={userReview} />
+                        <HomeList reviews={currentMovieReviews} />
                     </section>
                 </main>
             </div>
