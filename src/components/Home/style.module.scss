@@ -1,51 +1,39 @@
 .internalPage {
     background-color: var(--grey-2);
     color: var(--white);
-
     padding: 0 0 1.875rem 0;
 
-
     &>header {
-        background-image: url("../../assets/BackgroundImage.png");
-        height: 39.9375rem;
-        width: 100%;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-
         &>div {
             width: 75%;
             margin: 0 auto;
             display: flex;
             flex-direction: row;
-            align-items: center;
             justify-content: space-between;
+            align-items: center;
             padding: 1.25rem;
 
+
             &>div {
+                width: auto;
                 display: flex;
                 flex-direction: row;
                 align-items: center;
+                justify-content: space-between;
                 gap: 1.875rem;
+
 
                 &>div {
                     display: flex;
                     flex-direction: row;
                     align-items: center;
                     gap: .625rem;
-
-                    &>p {
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        color: var(--white);
-                    }
                 }
             }
         }
     }
 
-    &>main {
+    main {
         width: 100%;
 
         &>.principalAvaliation {
@@ -69,6 +57,7 @@
                 &>.text {
                     width: 100%;
                     display: flex;
+                    flex-direction: row;
                     align-items: center;
                     justify-content: space-between;
 
@@ -77,12 +66,16 @@
                         align-items: center;
                         justify-content: center;
                         gap: .625rem;
+
                     }
                 }
 
-                &>.infoAvaliation {
-                    width: 58.625rem;
-                    height: 18rem;
+                &>div {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-between;
                 }
             }
         }
@@ -106,32 +99,71 @@
             }
         }
     }
+
 }
 
-@media (max-width: 41.875rem) {
-    .internalPage {
-        background-color: var(--grey-2);
-        color: var(--white);
-        padding: 0 0 1.875rem 0;
 
-        &>header {
-            background-image: url("../../assets/BackgroundImage.png");
-            height: 39.9375rem;
-            width: 100%;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
+@media (max-width: 41.875rem) {
+    header {
+        &>div {
+            width: 90%;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.25rem;
+            gap: 1rem;
 
             &>div {
-                width: 90%;
-                margin: 0 auto;
+                width: 100%;
                 display: flex;
-                flex-wrap: wrap;
                 flex-direction: row;
                 align-items: center;
                 justify-content: space-between;
-                padding: 1.25rem;
-                gap: 1rem;
+                gap: 1.875rem;
+            }
+        }
+    }
+
+    main {
+        width: 100%;
+
+        &>.principalAvaliation {
+            width: 90%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 2.1875rem;
+
+
+            &>.infoHeader {
+                width: 100%;
+
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                gap: 1.875rem;
+                margin-top: -11.25rem;
+
+                &>.text {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    &>p {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: .625rem;
+                    }
+                }
 
                 &>div {
                     width: 100%;
@@ -139,10 +171,37 @@
                     flex-direction: row;
                     align-items: center;
                     justify-content: space-between;
-                    gap: 1.875rem;
                 }
             }
         }
+
+        &>.listAvaliation {
+            width: 100%;
+
+            &>div {
+                width: 75%;
+                margin: 1.875rem auto;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                &>button {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: .75rem;
+                }
+            }
+        }
+    }
+
+}
+
+@media (max-width:35.75rem) {
+    .internalPage {
+        background-color: var(--grey-2);
+        color: var(--white);
+        padding: 0 0 1.875rem 0;
 
         &>main {
             width: 100%;
@@ -162,111 +221,37 @@
                     flex-direction: column;
                     justify-content: space-between;
                     align-items: center;
-                    gap: 1.875rem;
-                    margin-top: -9rem;
-
-                    &>.text {
-                        width: 100%;
-                        display: flex;
-                        align-items: center;
-                        justify-content: space-between;
-
-                        &>p {
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            gap: .625rem;
-                        }
-                    }
-
-                    &>.infoAvaliation {
-                        width: 58.625rem;
-                        height: 18rem;
-                    }
+                    gap: .625rem;
+                    margin-top: -7.5625rem;
                 }
+
             }
 
-            &>.listAvaliation {
+        }
+    }
+}
+
+@media (max-width:29.6875rem) {
+    main {
+        width: 100%;
+
+        &>.principalAvaliation {
+            width: 90%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 2.1875rem;
+
+            &>.infoHeader {
                 width: 100%;
-
-                &>div {
-                    width: 75%;
-                    margin: 1.875rem auto;
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-
-                 &>button {
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        gap: .75rem;
-                    }
-                }
-            }
-        }
-    }
-}
-
-@media (max-width:29.6875rem) {
-    .internalPage {
-        background-color: var(--grey-2);
-        color: var(--white);
-        padding: 0 0 1.875rem 0;
-
-        &>main {
-            width: 100%;
-
-            &>.principalAvaliation {
-                width: 90%;
-                margin: 0 auto;
                 display: flex;
-                justify-content: space-between;
-                align-items: flex-start;
                 flex-direction: column;
-                gap: 2.1875rem;
-
-                &>.infoHeader {
-                    width: 100%;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-between;
-                    align-items: center;
-                    gap: .625rem;
-                    margin-top: -11.5625rem;
-                }
-            }
-
-        }
-    }
-}
-
-@media (max-width:21.1875rem) {
-    .internalPage {
-        background-color: var(--grey-2);
-        color: var(--white);
-        padding: 0 0 1.875rem 0;
-
-        &>main {
-            width: 100%;
-            &>.principalAvaliation {
-                width: 90%;
-                margin: 0 auto;
-                display: flex;
                 justify-content: space-between;
-                align-items: flex-start;
-                flex-direction: column;
-                gap: 2.1875rem;
-
-                &>.infoHeader {
-                    width: 100%;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-between;
-                    align-items: center;
-                    gap: .625rem;
-                    margin-top: -15.625rem;
-                }
+                align-items: center;
+                gap: .625rem;
+                margin-top: -28.125rem;
             }
         }
     }

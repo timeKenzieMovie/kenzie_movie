@@ -2,6 +2,7 @@
     width: 7.125rem;
     height: 2.6875rem;
     border-radius: 15.9375rem;
+
     font-family: var(--font-primary);
     font-size: var(--font-6);
     font-weight: var(--weight-1);
@@ -11,6 +12,9 @@
     cursor: pointer;
 
     &.round {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
         width: 2.6875rem;
     }
 }
@@ -36,4 +40,10 @@
     @extend %btn;
     width: 11.5625rem;
     height: 4.1875rem;
+}
+
+@media (max-width: 32.1875rem){
+    .buttonMedium {
+        padding: 0 0.625rem;
+    }
 }

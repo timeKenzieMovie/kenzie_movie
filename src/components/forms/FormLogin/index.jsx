@@ -4,27 +4,41 @@ import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { formLoginSchema } from "./formLoginSchema"
 import styles from "./style.module.scss"
+import { useContext } from "react"
+import { UserContext } from "../../../providers/UserContext"
+import { api } from "../../../services/api"
 
 
 export const FormLogin = () => {
+
+    const { setUser } = useContext(UserContext)
+
     const navigate = useNavigate();
 
     const { register, handleSubmit, formState: { errors } } = useForm({
         resolver: zodResolver(formLoginSchema),
     })
 
-    const onSubmit = (formData) => {
-        console.log(formData)
+    const submit = async (formData) => {
+        try {
+            const { data } = await api.post("login", formData);
+            localStorage.setItem("@TOKEN", data.accessToken);
+            localStorage.setItem("@USERID", data.user.id);
+
+            setUser(data.user);
+            navigate('/home');
+            // toast.success("Vamos entrando.");
+        } catch (error) {
+            // toast.error("Algo deu errado...");
+            console.log(error.message)
+        }
     }
 
-    const handleClick = () => {
-        navigate('/home')
-    }
     return (
         <>
             <section className={styles.formLogin}>
                 <h1 className="title1">Login</h1>
-                <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+                <form className={styles.form} onSubmit={handleSubmit(submit)}>
                     <Input className="input login"
                         type="email"
                         id="email"
@@ -32,14 +46,15 @@ export const FormLogin = () => {
                         {...register("email")}
                         error={errors.email}
                     />
-                    <Input className="input login" type="password"
+                    <Input className="input login"
+                        type="password"
                         placeholder="Senha"
                         {...register("password")}
                         error={errors.password}
                     />
+                    <button className={styles.buttonLogin}>Entrar</button>
                 </form>
                 <div className={styles.divRegisterLogin}>
-                    <button className={styles.buttonLogin} onClick={handleClick}>Entrar</button>
 
                     <p className="paragraph">ou</p>
                     <Link className="menuItem link" to={"/register"}><h3 type="submit" >Cadastre-se</h3></Link >
