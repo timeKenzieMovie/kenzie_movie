@@ -8,22 +8,19 @@ import { Footer } from "../Footer";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../providers/UserContext";
 import { MovieContext } from "../../providers/MovieContext";
+import { Header } from "../Header";
 
 export const Home = () => {
     const { getMovie, currentMovie, currentMovieReviews, moviesList } = useContext(MovieContext);
-
-    const navigate = useNavigate();
     const { user, logout } = useContext(UserContext);
 
-    // console.log(moviesList);
-
+    const navigate = useNavigate();
+    
 
     useEffect(() => {
         const movieId = localStorage.getItem("@kenziemovie-CurrentMovie");
         getMovie(movieId);
     }, []);
-
-    // console.log(currentMovie);
 
     // const rating = moviesList.map(movie => {
     //     movie.reviews.id.length > 0 ?
@@ -34,35 +31,23 @@ export const Home = () => {
 
     return (
         <section>
-            {/* {currentMovie ? */}
             <div className={Style.internalPage} >
-                <header
-                // ****************************
-                // Essa parte está quebrando o código
-                // ****************************
-                // style={{
-                //     backgroundImage: `url(${currentMovie.image})`,
-                //     height: "39.9375rem",
-                //     width: "100%",
-                //     backgroundSize: 'cover',
-                //     backgroundPosition: 'center',
-                //     backgroundRepeat: 'no-repeat',
-                // }}
+                <div
+                    style={{
+                        backgroundImage: `url(${currentMovie?.image})`,
+                        height: "39.9375rem",
+                        width: "100%",
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                        backgroundRepeat: 'no-repeat',
+                    }}
                 >
-                    {user ?
-                        <div>
-                            <div>
-                                <p className={`buttonSmall round`}>{user.name.at(0)}</p>
-                                <h3>{user.name}</h3>
-                            </div>
-                            <button className="title2" type="submit" onClick={() => logout()}>Sair</button>
-                        </div>
-                        : null}
-
-                </header>
+                    <Header />
+                </div>
                 <main>
                     <section className={`${Style.principalAvaliation}`} >
-                        {/* <div className={`${Style.infoHeader}`}>
+                        {currentMovie && <>
+                            <div className={`${Style.infoHeader}`}>
                                 <div className={`${Style.text}`}>
                                     <p className={`buttonSmall`}>{currentMovie.type}</p>
                                     <p className={`paragraph alignRight`}>{currentMovie.duration}</p>
@@ -78,15 +63,14 @@ export const Home = () => {
                             <div>
                                 <p className={`paragraph alignRight`}>{currentMovie.duration}</p>
                                 <p className={`title1-mobileB`}><FiStar color="var(--yellow)" /> 5.0</p>
-                            </div> */}
+                            </div>
+                        </>}
 
                         <HomeCard />
                         <HomeList />
                     </section>
                 </main>
             </div>
-                {/* // : null} */}
-
             <Footer />
         </section >
     )

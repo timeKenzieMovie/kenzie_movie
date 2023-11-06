@@ -4,19 +4,24 @@ import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import Style from "../../HomeCardModal/style.module.scss";
 import { Select } from "../../../../Select";
+import { MovieContext } from "../../../../../providers/MovieContext";
+import { UserContext } from "../../../../../providers/UserContext";
 
-export const EditAvaliationModal = ({setIsVisibleEdit}) => {
+export const EditAvaliationModal = () => {
+
+    const {currentMovieReviews, setCurrentMovieReviews} = useContext(MovieContext);
+    const {setIsVisibleEdit} = useContext(UserContext);
     const { register, handleSubmit, formState: { errors } } = useForm({
-        // values: {
-        //     score: ,
-        //     description: 
-        // }
+        values: {
+            score: currentMovieReviews.score,
+            description: currentMovieReviews.description
+        }
     });
 
 
 
     const submit = (payLoad) => {
-
+        setCurrentMovieReviews(payLoad)
     }
 
     return (

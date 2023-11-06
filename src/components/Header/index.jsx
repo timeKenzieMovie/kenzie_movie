@@ -3,9 +3,11 @@ import Logo from "../../assets/kenziemovie.svg";
 import styles from "./style.module.scss";
 import { useContext } from "react";
 import { UserContext } from "../../providers/UserContext";
+import { MovieContext } from "../../providers/MovieContext";
 
 export const Header = () => {
-    const {user} = useContext(UserContext)
+    const { user, logout } = useContext(UserContext);
+    const {currentMovie} = useContext(MovieContext);
     const navigate = useNavigate();
 
     const handleClick = () => {
@@ -14,16 +16,47 @@ export const Header = () => {
 
     return (
         <>
-            <header className={styles.header}>
-                <div className={styles.divHeader}>
-                     <img src={Logo} alt="Kenzie Movie icon" />
-                    <div className={styles.divNav}>
-                        <Link className="menuItem" to={"/register"}><span >Cadastre-se</span></Link>
+            {user ?
+                <header
+                // ****************************
+                // Essa parte está quebrando o código
+                // ****************************
+                // style={{
+                //     backgroundImage: `url(${currentMovie.image})`,
+                //     height: "39.9375rem",
+                //     width: "100%",
+                //     backgroundSize: 'cover',
+                //     backgroundPosition: 'center',
+                //     backgroundRepeat: 'no-repeat',
+                // }}
+                >
+                 
 
-                        <button className={styles.buttonLogin} onClick={handleClick}>Entrar</button>
+                    <div>
+                        <div>
+                            <p className={`buttonSmall round`}>{user.name.at(0)}</p>
+                            <h3>{user.name}</h3>
+                        </div>
+                        <button className="title2" type="submit" onClick={() => logout()}>Sair</button>
                     </div>
-                </div>
-            </header>
+
+                </header>
+                :
+                <header className={styles.header}>
+
+                    <div className={styles.divHeader}>
+                        <img src={Logo} alt="Kenzie Movie icon" />
+                        <div className={styles.divNav}>
+                            <Link className="menuItem" to={"/register"}><span >Cadastre-se</span></Link>
+
+                            <button className={styles.buttonLogin} onClick={handleClick}>Entrar</button>
+                        </div>
+                    </div>
+
+
+                </header>
+            }
         </>
+
     )
 }

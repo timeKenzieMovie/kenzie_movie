@@ -26,6 +26,20 @@
             }
         }
     }
+
+    .avaliationTitle {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+    }
 }
 
 .divAvaliation {
@@ -74,4 +88,3 @@
         margin-left: 0;
     }
 }
-

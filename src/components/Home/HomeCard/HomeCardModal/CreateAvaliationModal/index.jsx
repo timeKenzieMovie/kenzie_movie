@@ -6,16 +6,19 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { createTAvaliationModalSchema } from "../CreateAvaliationModal/createAvaliationModal.schema";
 import Style from "../../HomeCardModal/style.module.scss";
 import { Select } from "../../../../Select";
+import { UserContext } from "../../../../../providers/UserContext";
 
-export const CreateAvaliationModal = ({setIsVisibleCreate}) => {
+export const CreateAvaliationModal = () => {
     const { register, handleSubmit, formState: { errors } } = useForm({
         resolver: zodResolver(createTAvaliationModalSchema)
     });
 
+    const {setIsVisibleCreate } = useContext(UserContext);
+    
 
 
     const submit = (payLoad) => {
-
+        console.log(payLoad)
     }
 
     return (

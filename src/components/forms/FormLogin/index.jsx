@@ -26,7 +26,7 @@ export const FormLogin = () => {
             localStorage.setItem("@USERID", data.user.id);
 
             setUser(data.user);
-            navigate('/home');
+            navigate("/");
             // toast.success("Vamos entrando.");
         } catch (error) {
             // toast.error("Algo deu errado...");

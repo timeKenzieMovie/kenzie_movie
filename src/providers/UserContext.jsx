@@ -8,8 +8,7 @@ export const UserProvider = ({ children }) => {
 
     const [user, setUser] = useState(null);
     const [avaliationList, setAvaliationList] = useState([]);
-    const [isVisibleCreate, setIsVisibleCreate] = useState(false);
-    
+    const [isVisibleCreate, setIsVisibleCreate] = useState(false);   
     const [isVisibleEdit, setIsVisibleEdit] = useState(false);
 
     const pathName = window.location.pathName;
@@ -19,8 +18,8 @@ export const UserProvider = ({ children }) => {
     const logout = () => {
         setUser(null);
         navigate("/");
-        localStorage.removeItem("@TOKEN")
-        localStorage.removeItem("@USERID")
+        localStorage.removeItem("@TOKEN");
+        localStorage.removeItem("@USERID");
     }
 
     useEffect(() => {
