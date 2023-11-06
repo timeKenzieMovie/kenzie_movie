@@ -22,8 +22,8 @@ export const RegisterPage = () => {
                         <h2 className="title1">Cadastro</h2>
                         <Link className="menuItem link" to="/"><BsArrowLeft /> Voltar</Link>
                     </div>
-                    <p className="paragraph">Preencha os campos para cadastrar-se</p>
-                <FormRegister />
+                    <p className={styles.paragraph}>Preencha os campos para cadastrar-se</p>
+                    <FormRegister />
                 </section>
             </main>
             <Footer />

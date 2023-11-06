@@ -22,7 +22,7 @@ export const Movie = ({ movie }) => {
         <p className={styles.movietype}>{movie.type}</p>
         <p className={styles.movieduration}>{`${movie.duration}m`}</p>
       </div>
-      <div className={styles.movieinfo}>
+      <div className={styles.movieinfoRating}>
         <h2 className={styles.movietitle}>{movie.name}</h2>
         <div className={styles.movierating}>
           <img src={star} />
