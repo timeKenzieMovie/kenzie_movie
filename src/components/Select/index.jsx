@@ -1,5 +1,5 @@
 import { forwardRef } from "react";
-
+import styles from "./style.module.scss";
 
 export const Select = forwardRef (({error, children, label, id, ...rest}, ref) => {
 
@@ -7,7 +7,7 @@ export const Select = forwardRef (({error, children, label, id, ...rest}, ref) =
         <div>
             <label className={`headline`} htmlFor={id}>{label}</label>
             <select className="select"  ref={ref} {...rest} id={id}>{children}</select>
-            <span>{error && error.message}</span>
+            <span className={styles.error}>{error && error.message}</span>
         </div>
     )
 })

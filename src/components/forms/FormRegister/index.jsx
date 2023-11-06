@@ -30,25 +30,29 @@ export const FormRegister = () => {
         <>
             <form onSubmit={handleSubmit(submit)} className={styles.formRegister}>
                 <div className={styles.divInputs}>
-                    <Input
+                    <Input className={styles.register}
+                        id="name"
                         type="text"
                         {...register("name")}
                         placeholder="Nome"
                         errors={errors.name}
                     />
-                    <Input
+                    <Input className={styles.register}
+                        id="email"
                         type="email"
                         {...register("email")}
                         placeholder="E-mail"
                         errors={errors.email}
                     />
-                    <Input
+                    <Input className={styles.register}
+                        id="password"
                         type="password"
                         {...register("password")}
                         placeholder="Senha"
                         errors={errors.password}
                     />
-                    <Input
+                    <Input className={styles.register}
+                        id="confirmPassword"
                         type="password"
                         {...register("confirmPassword")}
                         placeholder="Confirmar Senha"

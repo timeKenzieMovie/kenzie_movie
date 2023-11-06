@@ -6,15 +6,14 @@
     font-family: var(--font-primary);
     font-weight: var(--weight-1);
     line-height: 1.5rem;
-    &::placeholder{
+
+    &::placeholder {
         font-size: 1rem;
         color: var(--white);
     }
-    &:focus{
+
+    &:focus {
         color: var(--white);
-    }
-    .register{
-        max-width: 48%;
     }
 }
 
@@ -28,36 +27,17 @@
     line-height: 1.5rem;
     border: none;
     padding: 1rem;
-    &::placeholder{
-        font-size: 1rem;
-        color: var(--white);
-    }
-    &:focus{
-        color: var(--white);
-    }
-    &.register{
-        max-width: 48%;
-    }
-}
 
-.select {
-    width: 100%;
-    background: var(--grey-1);
-    padding: 0.5rem;
-    color: var(--white);
-    font-family: var(--font-primary);
-    font-weight: var(--weight-1);
-    line-height: 1.5rem;
-    border: none;
-    padding: 1rem;
-    &::placeholder{
+    &::placeholder {
         font-size: 1rem;
         color: var(--white);
     }
-    &:focus{
+
+    &:focus {
         color: var(--white);
     }
-    .register{
+
+    &.register {
         max-width: 48%;
     }
 }
@@ -73,74 +53,36 @@
     line-height: 1.5rem;
     border: none;
     padding: 1rem;
-    &::placeholder{
+
+    &::placeholder {
         font-size: 1rem;
         color: var(--white);
     }
-    &:focus{
+
+    &:focus {
         color: var(--white);
     }
-    .register{
+
+    .register {
         max-width: 48%;
     }
 }
 
-.textarea {
-    width: 100%;
-    height: 12.5rem;
-    background: var(--grey-1);
-    padding: 0.5rem;
-    color: var(--white);
-    font-family: var(--font-primary);
-    font-weight: var(--weight-1);
-    line-height: 1.5rem;
-    border: none;
-    padding: 1rem;
-    &::placeholder{
-        font-size: 1rem;
-        color: var(--white);
-    }
-    &:focus{
-        color: var(--white);
-    }
-    .register{
-        max-width: 48%;
-    }
-}
-
-@media (max-width: 41.875rem){
+@media (max-width: 41.875rem) {
     .input {
         width: 100%;
         background: var(--grey-1);
         padding: .5rem;
-
         color: var(--white);
     }
-    .register{
+
+    .register {
         max-width: 48%;
     }
-}
 
-.textarea {
-    width: 100%;
-    height: 200px;
-    background: var(--grey-1);
-    padding: 8px;
-    color: var(--white);
-    font-family: var(--font-primary);
-    font-weight: var(--weight-1);
-    line-height: 24px;
-    border: none;
-    padding: 16px;
-    &::placeholder{
-        font-size: 16px;
-        color: var(--white);
-    }
-    &:focus{
-        color: var(--white);
-    }
-    .register{
-        max-width: 48%;
+    .textarea {
+        .register {
+            max-width: 48%;
+        }
     }
 }
-

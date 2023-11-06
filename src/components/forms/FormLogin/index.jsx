@@ -39,24 +39,24 @@ export const FormLogin = () => {
             <section className={styles.formLogin}>
                 <h1 className="title1">Login</h1>
                 <form className={styles.form} onSubmit={handleSubmit(submit)}>
-                    <Input className="input login"
+                    <Input className={styles.inputLogin}
                         type="email"
                         id="email"
                         placeholder="E-mail"
                         {...register("email")}
-                        error={errors.email}
+                        errors={errors.email}
                     />
-                    <Input className="input login"
+                    <Input className={styles.inputLogin}
                         type="password"
                         placeholder="Senha"
                         {...register("password")}
-                        error={errors.password}
+                        errors={errors.password}
                     />
                     <button className={styles.buttonLogin}>Entrar</button>
                 </form>
                 <div className={styles.divRegisterLogin}>
 
-                    <p className="paragraph">ou</p>
+                    <p className={styles.paragraph}>ou</p>
                     <Link className="menuItem link" to={"/register"}><h3 type="submit" >Cadastre-se</h3></Link >
                 </div>
             </section>

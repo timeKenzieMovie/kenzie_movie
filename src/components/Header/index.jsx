@@ -7,7 +7,7 @@ import { MovieContext } from "../../providers/MovieContext";
 
 export const Header = () => {
     const { user, logout } = useContext(UserContext);
-    const {currentMovie} = useContext(MovieContext);
+    const { currentMovie } = useContext(MovieContext);
     const navigate = useNavigate();
 
     const handleClick = () => {
@@ -17,25 +17,11 @@ export const Header = () => {
     return (
         <>
             {user ?
-                <header
-                // ****************************
-                // Essa parte está quebrando o código
-                // ****************************
-                // style={{
-                //     backgroundImage: `url(${currentMovie.image})`,
-                //     height: "39.9375rem",
-                //     width: "100%",
-                //     backgroundSize: 'cover',
-                //     backgroundPosition: 'center',
-                //     backgroundRepeat: 'no-repeat',
-                // }}
-                >
-                 
-
+                <header className={styles.headerUser}>
                     <div>
                         <div>
                             <p className={`buttonSmall round`}>{user.name.at(0)}</p>
-                            <h3>{user.name}</h3>
+                            <h3 className="title1">{user.name}</h3>
                         </div>
                         <button className="title2" type="submit" onClick={() => logout()}>Sair</button>
                     </div>
