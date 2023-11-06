@@ -50,7 +50,7 @@ export const Home = () => {
                             <div className={`${Style.infoHeader}`}>
                                 <div className={`${Style.text}`}>
                                     <p className={`buttonSmall`}>{currentMovie.type}</p>
-                                    <p className={`paragraph alignRight`}>{currentMovie.duration}</p>
+                                    <p className={`paragraph alignRight`}>{currentMovie.duration}m</p>
                                 </div>
                                 <div className={Style.text2}>
                                     <h2 className={`title1`}>{currentMovie.name}</h2>
@@ -60,10 +60,10 @@ export const Home = () => {
                             <div className={`${Style.infoAvaliation}`}>
                                 <p className={`paragraph alignLeft`}>{currentMovie.synopsis}</p>
                             </div>
-                            <div>
+                            {/* <div>
                                 <p className={`paragraph alignRight`}>{currentMovie.duration}</p>
                                 <p className={`title1-mobileB`}><FiStar color="var(--yellow)" /> 5.0</p>
-                            </div>
+                            </div> */}
                         </>}
 
                         <HomeCard />
