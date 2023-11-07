@@ -11,7 +11,7 @@ export const ReviewCard = ({ review }) => {
   return (
     <li className={Style.card}>
       <p className={`buttonSmall round ${Style.icon}`}>{reviewUser?.name.at(0)}</p>
-      <p className={`title1-mobileB`}><FiStar color="var(--yellow)" />{` ${review.score.toFixed(1)}`}</p>
+      <p className={`title1-mobileB`}><FiStar color="var(--yellow)" />{` ${Number(review.score).toFixed(1)}`}</p>
       <p className={Style.text}>{review.description}</p>
       <p className={`title3`}>{reviewUser?.name}</p>
 

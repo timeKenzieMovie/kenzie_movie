@@ -7,7 +7,7 @@ export const Movie = ({ movie }) => {
   const navigate = useNavigate();
 
   const rating = movie.reviews.length > 0 ?
-    movie.reviews.reduce((total, value) => total + value.score, 0) / movie.reviews.length :
+    movie.reviews.reduce((total, value) => total + Number(value.score), 0) / movie.reviews.length :
     5;
 
   const handleClick = () => {

@@ -61,7 +61,7 @@ export const HomeCard = () => {
                                 <p className={`paragraph`}>{userReview.description}</p>
                             </div>
                             <div className={Style.noteEditRemove}>
-                                <p className={`title1-mobileB`}><FiStar color="var(--yellow)" />{` ${userReview.score.toFixed(1)}`}</p>
+                                <p className={`title1-mobileB`}><FiStar color="var(--yellow)" />{` ${Number(userReview.score).toFixed(1)}`}</p>
                                 <div>
                                     <button onClick={() => { setIsVisibleEdit(true) }} aria-label="edit"><MdEdit size={17} color="var(--yellow)" /></button>
                                     <button onClick={handleDeleteReview} aria-label="delete"><MdDelete size={17} color="var(--yellow)" /></button>

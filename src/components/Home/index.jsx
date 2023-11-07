@@ -26,7 +26,7 @@ export const Home = () => {
     }, []);
 
     const rating = currentMovieReviews?.length > 0 ?
-        currentMovieReviews.reduce((total, value) => total + value.score, 0) / currentMovieReviews.length :
+        currentMovieReviews.reduce((total, value) => total + Number(value.score), 0) / currentMovieReviews.length :
         5;
 
     return (
