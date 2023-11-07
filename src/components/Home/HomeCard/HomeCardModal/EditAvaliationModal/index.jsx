@@ -6,36 +6,45 @@ import Style from "../../HomeCardModal/style.module.scss";
 import { Select } from "../../../../Select";
 import { MovieContext } from "../../../../../providers/MovieContext";
 import { UserContext } from "../../../../../providers/UserContext";
+import { useOutClick } from "../../../../../hooks/useOutClick";
+import { useKeyDown } from "../../../../../hooks/useKeyDown";
 
-export const EditAvaliationModal = () => {
+export const EditAvaliationModal = ({ review }) => {
 
-    const {currentMovieReviews, setCurrentMovieReviews} = useContext(MovieContext);
-    const {setIsVisibleEdit} = useContext(UserContext);
-    const { register, handleSubmit, formState: { errors } } = useForm({
-        values: {
-            score: currentMovieReviews.score,
-            description: currentMovieReviews.description
+    const { editReview } = useContext(MovieContext);
+    const { setIsVisibleEdit } = useContext(UserContext);
+    const { register, handleSubmit } = useForm({
+        defaultValues: {
+            score: review.score,
+            description: review.description
         }
     });
 
+    const cancel = () => {
+        setIsVisibleEdit(false);
+    }
 
+    const modalRef = useOutClick(cancel);
 
-    const submit = (payLoad) => {
-        setCurrentMovieReviews(payLoad)
+    useKeyDown("Escape", cancel);
+
+    const submit = async payload => {
+        payload.score = Number(payload.score);
+        const success = await editReview({...payload, userId: review.userId, movieId: review.movieId, id: review.id});
+        success && setIsVisibleEdit(false);
     }
 
     return (
         <div role="dialog" className={`${Style.overlayBox}`}>
-            <form onSubmit={handleSubmit(submit)} className={`${Style.flexbox}`}>
+            <form ref={modalRef} onSubmit={handleSubmit(submit)} className={`${Style.flexbox}`}>
                 <div className={`${Style.head}`}>
                     <h2 className="title1 nowrap">Editar Avaliação</h2>
-                    <button onClick={() => setIsVisibleEdit(false)} aria-label="close" title="Fechar">
+                    <button onClick={cancel} aria-label="close" title="Fechar">
                         <MdClose size={21} color="rgba(255, 255, 255, 0.5)" />
                     </button>
                 </div>
                 <div>
-                    <Select id="score" {...register("score")} error={errors.score}>
-                        <option value="">Selecione uma nota</option>
+                    <Select id="score" {...register("score")}>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -49,7 +58,7 @@ export const EditAvaliationModal = () => {
                     </Select>
                 </div>
                 <div>
-                    <textarea className={`textarea`} name="description" id="description" placeholder="Deixe um comentário" {...register("description")} error={errors.description}></textarea>
+                    <textarea required className={`textarea`} name="description" id="description" placeholder="Deixe um comentário" {...register("description")}></textarea>
                 </div>
 
                 <button className={`buttonMedium`} type="submit"> <FiStar color="var(--grey-2)" />Atualizar</button>

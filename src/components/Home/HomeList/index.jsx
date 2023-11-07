@@ -3,9 +3,11 @@ import Style from "./style.module.scss";
 import { useContext, useEffect } from "react";
 import { UserContext } from "../../../providers/UserContext";
 import { ReviewCard } from "./ReviewCard";
+import { MovieContext } from "../../../providers/MovieContext";
 
-export const HomeList = ({ reviews }) => {
+export const HomeList = () => {
     const { getUsers } = useContext(UserContext);
+    const { currentMovieReviews } = useContext(MovieContext);
 
     useEffect(() => {
         getUsers();
@@ -13,7 +15,7 @@ export const HomeList = ({ reviews }) => {
 
     return (
         <ul className={`${Style.avaliationList}`}>
-            {reviews.map(review => <ReviewCard key={review.id} review={review} />)}
+            {currentMovieReviews && currentMovieReviews.length > 0 && currentMovieReviews.map(review => <ReviewCard key={review.id} review={review} />)}
             {/* <li>
                 <p className={`buttonSmall round ${Style.icon}`}>J</p>
                 <p className={`title1-mobileB`}><FiStar color="var(--yellow)" /> 5.0</p>

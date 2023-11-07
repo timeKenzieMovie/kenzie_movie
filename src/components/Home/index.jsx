@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import kenzieMovieIcon from "../../assets/kenziemovie.svg";
 import Style from "./style.module.scss";
 import { HomeList } from "./HomeList";
@@ -11,7 +11,7 @@ import { MovieContext } from "../../providers/MovieContext";
 import { Header } from "../Header";
 
 export const Home = () => {
-    const { getMovie, currentMovie, currentMovieReviews } = useContext(MovieContext);
+    const { getMovie, currentMovie, currentMovieReviews, userReview } = useContext(MovieContext);
     const { user, logout } = useContext(UserContext);
 
     const navigate = useNavigate();
@@ -25,8 +25,6 @@ export const Home = () => {
     const rating = currentMovieReviews?.length > 0 ?
         currentMovieReviews.reduce((total, value) => total + value.score, 0) / currentMovieReviews.length :
         5;
-
-    const userReview = user ? currentMovieReviews.filter(review => review.userId === user.id)[0] : null;
 
     return (
         <section>
@@ -65,8 +63,8 @@ export const Home = () => {
                             </div>
                         </>}
 
-                        <HomeCard userReview={userReview} />
-                        <HomeList reviews={currentMovieReviews} />
+                        <HomeCard />
+                        <HomeList />
                     </section>
                 </main>
             </div>

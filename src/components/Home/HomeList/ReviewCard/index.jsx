@@ -10,10 +10,10 @@ export const ReviewCard = ({ review }) => {
 
   return (
     <li>
-      <p className={`buttonSmall round ${Style.icon}`}>{reviewUser.name.at(0)}</p>
+      <p className={`buttonSmall round ${Style.icon}`}>{reviewUser?.name.at(0)}</p>
       <p className={`title1-mobileB`}><FiStar color="var(--yellow)" />{` ${review.score.toFixed(1)}`}</p>
       <p className={`paragraph ${Style.text}`}>{review.description}</p>
-      <p className={`title3`}>{reviewUser.name}</p>
+      <p className={`title3`}>{reviewUser?.name}</p>
     </li>
   );
 }

@@ -8,29 +8,38 @@ import Style from "../../HomeCardModal/style.module.scss";
 import { Select } from "../../../../Select";
 import { UserContext } from "../../../../../providers/UserContext";
 import { MovieContext } from "../../../../../providers/MovieContext";
+import { useOutClick } from "../../../../../hooks/useOutClick";
+import { useKeyDown } from "../../../../../hooks/useKeyDown";
 
 export const CreateAvaliationModal = () => {
     const { register, handleSubmit, formState: { errors } } = useForm({
-        resolver: (zodResolver(createAvaliationModalSchema))
+        resolver: zodResolver(createAvaliationModalSchema)
     });
 
-    const {setIsVisibleCreate } = useContext(UserContext);
-    const { createReview } = useContext(MovieContext);
+    const { user, setIsVisibleCreate } = useContext(UserContext);
+    const { currentMovie, createReview } = useContext(MovieContext);
     
+    const cancel = () => {
+        setIsVisibleCreate(false);
+    }
 
+    const modalRef = useOutClick(cancel);
+
+    useKeyDown("Escape", cancel);
 
     const submit = async payload => {
-        console.log(payload);
-        // const success = await createReview(payload);
-        // success && setIsVisibleCreate(false);
+        payload.score = Number(payload.score);
+        const newReview= {...payload, userId: user.id, movieId: currentMovie.id};
+        const success = await createReview(newReview);
+        success && setIsVisibleCreate(false);
     }
 
     return (
         <div role="dialog" className={`${Style.overlayBox}`}>
-            <form noValidate onSubmit={handleSubmit(submit)} className={`${Style.flexbox}`}>
+            <form ref={modalRef} noValidate onSubmit={handleSubmit(submit)} className={`${Style.flexbox}`}>
                 <div className={`${Style.head}`}>
                     <h2 className="title1">Avaliação</h2>
-                    <button type="button" onClick={() => setIsVisibleCreate(false)} aria-label="close" title="Fechar">
+                    <button type="button" onClick={cancel} aria-label="close" title="Fechar">
                         <MdClose size={21} color="rgba(255, 255, 255, 0.5)" />
                     </button>
                 </div>
@@ -51,6 +60,7 @@ export const CreateAvaliationModal = () => {
                 </div>
                 <div >
                     <textarea className={`textarea`} id="description" placeholder="Deixe um comentário" {...register("description")} error={errors.description}></textarea>
+                    <span className={Style.error}>{errors.description && errors.description.message}</span>
                 </div>
                 <button type="submit" className={`buttonMedium`}><FiStar color="var(--grey-2)" />Avaliar</button>
             </form>

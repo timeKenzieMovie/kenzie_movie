@@ -1,12 +1,15 @@
-import { createContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 import { api } from "../services/api";
+import { UserContext } from "./UserContext";
 
 export const MovieContext = createContext({});
 
 export const MovieProvider = ({ children }) => {
+  const { user } = useContext(UserContext);
   const [ moviesList, setMoviesList ] = useState([]);
   const [ currentMovie, setCurrentMovie ] = useState(null);
   const [ currentMovieReviews, setCurrentMovieReviews ] = useState([]);
+  const [ userReview, setUserReview ] = useState(null);
 
   const getMovies = async () => {
     try {
@@ -22,6 +25,9 @@ export const MovieProvider = ({ children }) => {
       const { data } = await api.get(`movies/${movieId}?_embed=reviews`);
       setCurrentMovie(data);
       setCurrentMovieReviews(data.reviews);
+      user && data.reviews.filter(review => review.userId === user.id).length > 0 ?
+        setUserReview(data.reviews.filter(review => review.userId === user.id)[0]) :
+        setUserReview(null);
     } catch (error) {
       console.error(error.message);
     }
@@ -35,7 +41,7 @@ export const MovieProvider = ({ children }) => {
         const { data } = await api.post("reviews", review, {
           headers: { Authorization: `Bearer ${token}` }
         });
-        setCurrentMovieReviews(...currentMovieReviews, data);
+        await getMovie(data.movieId);
         result = true;
       } catch (error) {
         console.error(error.message);
@@ -52,8 +58,7 @@ export const MovieProvider = ({ children }) => {
         await api.put(`reviews/${editedReview.id}`, editedReview, {
           headers: { Authorization: `Bearer ${token}` }
         });
-        setCurrentMovieReviews(
-          currentMovieReviews.map(review => review.id === editedReview.id ? editedReview : review));
+        await getMovie(editedReview.movieId);
         result = true;
       } catch (error) {
         console.error(error.message);
@@ -71,6 +76,7 @@ export const MovieProvider = ({ children }) => {
           headers: { Authorization: `Bearer ${token}` }
         });
         setCurrentMovieReviews(currentMovieReviews.filter(review => review.id !== reviewId));
+        setUserReview(null);
         result = true;
       } catch (error) {
         console.error(error.message);
@@ -80,7 +86,7 @@ export const MovieProvider = ({ children }) => {
   }
 
   return (
-    <MovieContext.Provider value={({ moviesList, getMovies, currentMovie, getMovie, currentMovieReviews, createReview, editReview, deleteReview })}>
+    <MovieContext.Provider value={({ moviesList, getMovies, currentMovie, getMovie, currentMovieReviews, userReview, createReview, editReview, deleteReview })}>
       {children}
     </MovieContext.Provider>
   );
