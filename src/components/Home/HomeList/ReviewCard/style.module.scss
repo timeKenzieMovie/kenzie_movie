@@ -1,19 +1,20 @@
 .card {
-  width: 25.8125rem;
-  height: 29.3125rem;
+  width: 25rem;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: .625rem;
-
-  .icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 0 auto;
+  padding: 1rem;
 
   .text {
-    width: 18.875rem;
-    height: 13.5rem;
+    font-family: var(--font-secondary);
+    font-weight: var(--weight-2);
+    color: var(--white);
+    font-size: var(--font-5);
+    font-weight: var(--weight-2);
+    line-height: 2.25rem;
   }
 }

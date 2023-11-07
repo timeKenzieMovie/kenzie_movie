@@ -9,11 +9,12 @@ export const ReviewCard = ({ review }) => {
   const reviewUser = users.filter(user => user.id === review.userId)[0];
 
   return (
-    <li>
+    <li className={Style.card}>
       <p className={`buttonSmall round ${Style.icon}`}>{reviewUser?.name.at(0)}</p>
       <p className={`title1-mobileB`}><FiStar color="var(--yellow)" />{` ${review.score.toFixed(1)}`}</p>
-      <p className={`paragraph ${Style.text}`}>{review.description}</p>
+      <p className={Style.text}>{review.description}</p>
       <p className={`title3`}>{reviewUser?.name}</p>
+
     </li>
   );
 }

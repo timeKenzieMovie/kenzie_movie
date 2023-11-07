@@ -141,6 +141,7 @@
 
         &.alignLeft {
             width: 90%;
+            margin-top: 1rem;
         }
     }
 }
@@ -152,6 +153,19 @@
 
         &.nowrap {
             white-space: wrap
+        }
+    }
+    .paragraph {
+        font-size: var(--font-5);
+        line-height: var(--height-5);
+
+        &.alignRight {
+            text-align: right;
+            color: #FFFFFF80;
+        }
+
+        &.alignLeft {
+            width: 90%;
         }
     }
 }

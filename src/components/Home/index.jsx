@@ -15,7 +15,10 @@ export const Home = () => {
     const { user, logout } = useContext(UserContext);
 
     const navigate = useNavigate();
-    
+
+    const handleClick = () => {
+        navigate("/")
+    }
 
     useEffect(() => {
         const movieId = localStorage.getItem("@kenziemovie-CurrentMovie");
@@ -38,7 +41,9 @@ export const Home = () => {
                         backgroundPosition: 'center',
                         backgroundRepeat: 'no-repeat',
                     }}
-                >
+                >    <div>
+                        <button onClick={handleClick}>Voltar</button>
+                    </div>
                     <Header />
                 </div>
                 <main>
@@ -56,10 +61,6 @@ export const Home = () => {
                             </div>
                             <div className={`${Style.infoAvaliation}`}>
                                 <p className={`paragraph alignLeft`}>{currentMovie.synopsis}</p>
-                            </div>
-                            <div>
-                                <p className={`paragraph alignRight`}>{`${currentMovie.duration}m`}</p>
-                                <p className={`title1-mobileB`}><FiStar color="var(--yellow)" />{` ${rating.toFixed(1)}`}</p>
                             </div>
                         </>}
 
