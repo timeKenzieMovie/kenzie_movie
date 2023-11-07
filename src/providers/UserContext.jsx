@@ -7,6 +7,7 @@ export const UserContext = createContext({});
 export const UserProvider = ({ children }) => {
 
     const [user, setUser] = useState(null);
+    const [users, setUsers] = useState([]);
     const [avaliationList, setAvaliationList] = useState([]);
     const [isVisibleCreate, setIsVisibleCreate] = useState(false);   
     const [isVisibleEdit, setIsVisibleEdit] = useState(false);
@@ -22,6 +23,15 @@ export const UserProvider = ({ children }) => {
         localStorage.removeItem("@USERID");
     }
 
+    const getUsers = async () => {
+        try {
+            const { data } = await api.get("users");
+            setUsers(data);
+        } catch (error) {
+            console.error(error.message);
+        }
+    }
+
     useEffect(() => {
         const token = localStorage.getItem("@TOKEN");
         const userId = localStorage.getItem("@USERID");
@@ -29,7 +39,7 @@ export const UserProvider = ({ children }) => {
             try {
                 const { data } = await api.get(`users/${userId}`, {
                     headers: { Authorizarion: `Bearer ${token}` }
-                })
+                });
                 setUser(data);
                 navigate(pathName);
             } catch (error) {
@@ -41,7 +51,7 @@ export const UserProvider = ({ children }) => {
 
 
     return (
-        <UserContext.Provider value={{ user, setUser, logout, avaliationList, setAvaliationList, isVisibleEdit, setIsVisibleEdit, isVisibleCreate, setIsVisibleCreate }}>
+        <UserContext.Provider value={{ user, setUser, users, getUsers, logout, avaliationList, setAvaliationList, isVisibleEdit, setIsVisibleEdit, isVisibleCreate, setIsVisibleCreate }}>
             {children}
         </UserContext.Provider>
     )

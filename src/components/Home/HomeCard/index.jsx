@@ -9,10 +9,16 @@ import { MovieContext } from "../../../providers/MovieContext";
 
 export const HomeCard = () => {
 
-    const { user, avaliationList, isVisibleCreate, setIsVisibleCreate, isVisibleEdit, setIsVisibleEdit } = useContext(UserContext);
-    const { currentMovieReviews } = useContext(MovieContext);
+    const { user, isVisibleCreate, setIsVisibleCreate, isVisibleEdit, setIsVisibleEdit } = useContext(UserContext);
+    const { userReview, deleteReview } = useContext(MovieContext);
 
-    console.log(currentMovieReviews)
+    const handleCreateReview = () => {
+        setIsVisibleCreate(true);
+    }
+
+    const handleDeleteReview = async () => {
+        await deleteReview(userReview.id);
+    }
 
     return (
         //<div>
@@ -38,7 +44,7 @@ export const HomeCard = () => {
             {user ?
                 <div className={Style.avaliationTitle}>
                     <h3 className="title1">Avaliações</h3>
-                    <button className="buttonSmall"><MdStarOutline/> Avaliar</button>
+                    {!userReview && <button onClick={handleCreateReview} className="buttonSmall"><MdStarOutline/> Avaliar</button>}
                 </div> :
                 <div>
                     <h3 className="title-1">Avaliações</h3>
@@ -46,28 +52,27 @@ export const HomeCard = () => {
             }
 
 
-            {user ?
+            {userReview &&
                 <ul>
                     <li>
                         <p>Sua avaliação</p>
                         <div>
                             <div className={Style.divAvaliation}>
-                                <p className={`paragraph`}>"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
+                                <p className={`paragraph`}>{userReview.description}</p>
                             </div>
                             <div className={Style.noteEditRemove}>
-                                <p className={`title1-mobileB`}><FiStar color="var(--yellow)" /> 5.0</p>
+                                <p className={`title1-mobileB`}><FiStar color="var(--yellow)" />{` ${userReview.score.toFixed(1)}`}</p>
                                 <div>
                                     <button onClick={() => { setIsVisibleEdit(true) }} aria-label="edit"><MdEdit size={17} color="var(--yellow)" /></button>
-                                    <button onClick={() => techDelete(avaliation.id)} aria-label="delete"><MdDelete size={17} color="var(--yellow)" /></button>
+                                    <button onClick={handleDeleteReview} aria-label="delete"><MdDelete size={17} color="var(--yellow)" /></button>
                                 </div>
                             </div>
                         </div>
                     </li>
-                </ul>
-                : null}
+                </ul>}
 
             {isVisibleCreate ? <CreateAvaliationModal /> : null}
-            {isVisibleEdit ? <EditAvaliationModal /> : null}
+            {isVisibleEdit ? <EditAvaliationModal review={userReview} /> : null}
         </div>
     )
 }

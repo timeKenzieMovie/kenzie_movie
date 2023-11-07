@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import kenzieMovieIcon from "../../assets/kenziemovie.svg";
 import Style from "./style.module.scss";
 import { HomeList } from "./HomeList";
@@ -11,23 +11,23 @@ import { MovieContext } from "../../providers/MovieContext";
 import { Header } from "../Header";
 
 export const Home = () => {
-    const { getMovie, currentMovie, currentMovieReviews, moviesList } = useContext(MovieContext);
+    const { getMovie, currentMovie, currentMovieReviews, userReview } = useContext(MovieContext);
     const { user, logout } = useContext(UserContext);
 
     const navigate = useNavigate();
-    
+
+    const handleClick = () => {
+        navigate("/")
+    }
 
     useEffect(() => {
         const movieId = localStorage.getItem("@kenziemovie-CurrentMovie");
         getMovie(movieId);
     }, []);
 
-    // const rating = moviesList.map(movie => {
-    //     movie.reviews.id.length > 0 ?
-    //         movie.reviews.reduce((total, value) => total + value.score, 0) / movie.reviews.id.length :
-    //         5;
-    // })
-    // console.log(rating);
+    const rating = currentMovieReviews?.length > 0 ?
+        currentMovieReviews.reduce((total, value) => total + value.score, 0) / currentMovieReviews.length :
+        5;
 
     return (
         <section>
@@ -41,7 +41,9 @@ export const Home = () => {
                         backgroundPosition: 'center',
                         backgroundRepeat: 'no-repeat',
                     }}
-                >
+                >    <div>
+                        <button onClick={handleClick}>Voltar</button>
+                    </div>
                     <Header />
                 </div>
                 <main>
@@ -50,20 +52,18 @@ export const Home = () => {
                             <div className={`${Style.infoHeader}`}>
                                 <div className={`${Style.text}`}>
                                     <p className={`buttonSmall`}>{currentMovie.type}</p>
-                                    <p className={`paragraph alignRight`}>{currentMovie.duration}m</p>
+                                    <p className={`paragraph alignRight`}>{`${currentMovie.duration}m`}</p>
+
                                 </div>
                                 <div className={Style.text2}>
                                     <h2 className={`title1`}>{currentMovie.name}</h2>
-                                    <p className={`title1-mobileB center`}><FiStar color="var(--yellow)" /> 5.0</p>
+                                    <p className={`title1-mobileB center`}><FiStar color="var(--yellow)" />{` ${rating.toFixed(1)}`}</p>
                                 </div>
                             </div>
                             <div className={`${Style.infoAvaliation}`}>
                                 <p className={`paragraph alignLeft`}>{currentMovie.synopsis}</p>
                             </div>
-                            {/* <div>
-                                <p className={`paragraph alignRight`}>{currentMovie.duration}</p>
-                                <p className={`title1-mobileB`}><FiStar color="var(--yellow)" /> 5.0</p>
-                            </div> */}
+
                         </>}
 
                         <HomeCard />

@@ -3,30 +3,43 @@ import { FiStar } from "react-icons/fi";
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { createTAvaliationModalSchema } from "../CreateAvaliationModal/createAvaliationModal.schema";
+import { createAvaliationModalSchema } from "./createAvaliationModal.schema";
 import Style from "../../HomeCardModal/style.module.scss";
 import { Select } from "../../../../Select";
 import { UserContext } from "../../../../../providers/UserContext";
+import { MovieContext } from "../../../../../providers/MovieContext";
+import { useOutClick } from "../../../../../hooks/useOutClick";
+import { useKeyDown } from "../../../../../hooks/useKeyDown";
 
 export const CreateAvaliationModal = () => {
     const { register, handleSubmit, formState: { errors } } = useForm({
-        resolver: zodResolver(createTAvaliationModalSchema)
+        resolver: zodResolver(createAvaliationModalSchema)
     });
 
-    const {setIsVisibleCreate } = useContext(UserContext);
+    const { user, setIsVisibleCreate } = useContext(UserContext);
+    const { currentMovie, createReview } = useContext(MovieContext);
     
+    const cancel = () => {
+        setIsVisibleCreate(false);
+    }
 
+    const modalRef = useOutClick(cancel);
 
-    const submit = (payLoad) => {
-        console.log(payLoad)
+    useKeyDown("Escape", cancel);
+
+    const submit = async payload => {
+        payload.score = Number(payload.score);
+        const newReview= {...payload, userId: user.id, movieId: currentMovie.id};
+        const success = await createReview(newReview);
+        success && setIsVisibleCreate(false);
     }
 
     return (
         <div role="dialog" className={`${Style.overlayBox}`}>
-            <form onSubmit={handleSubmit(submit)} className={`${Style.flexbox}`}>
+            <form ref={modalRef} noValidate onSubmit={handleSubmit(submit)} className={`${Style.flexbox}`}>
                 <div className={`${Style.head}`}>
                     <h2 className="title1">Avaliação</h2>
-                    <button onClick={() => setIsVisibleCreate(false)} aria-label="close" title="Fechar">
+                    <button type="button" onClick={cancel} aria-label="close" title="Fechar">
                         <MdClose size={21} color="rgba(255, 255, 255, 0.5)" />
                     </button>
                 </div>
@@ -46,10 +59,10 @@ export const CreateAvaliationModal = () => {
                     </Select>
                 </div>
                 <div >
-                    <textarea className={`textarea`} name="description" id="description" placeholder="Deixe um comentário" {...register("description")} error={errors.description}></textarea>
+                    <textarea className={`textarea`} id="description" placeholder="Deixe um comentário" {...register("description")} error={errors.description}></textarea>
+                    <span className={Style.error}>{errors.description && errors.description.message}</span>
                 </div>
-
-                <button className={`buttonMedium`} type="submit"> <FiStar color="var(--grey-2)" />Avaliar</button>
+                <button type="submit" className={`buttonMedium`}><FiStar color="var(--grey-2)" />Avaliar</button>
             </form>
         </div>
     )
